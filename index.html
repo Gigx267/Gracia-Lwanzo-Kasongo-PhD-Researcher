@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gracia Lwanzo Kasongo — Academic Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236B1D2F'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' font-family='Georgia, serif' font-size='38' font-weight='700' fill='%23f8f6f0'%3EG%3C/text%3E%3C/svg%3E" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: {
+                            DEFAULT: '#f8f6f0',
+                            card: '#f2eee3',
+                            hover: '#eae4d3',
+                        },
+                        burgundy: {
+                            DEFAULT: '#6B1D2F',
+                            dark: '#4d1220',
+                            light: '#8b273e',
+                            soft: '#f3e8eb',
+                        },
+                        navy: {
+                            DEFAULT: '#1a2836',
+                            light: '#25384b',
+                        },
+                        charcoal: '#222222',
+                        muted: '#666666'
+                    },
+                    fontFamily: {
+                        serif: ['Newsreader', 'Georgia', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                        cinzel: ['Cinzel', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .dot-pattern {
+            background-image: radial-gradient(#6B1D2F 1.5px, transparent 1.5px);
+            background-size: 14px 14px;
+            opacity: 0.25;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f8f6f0;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #6B1D2F;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="bg-cream text-charcoal font-sans antialiased leading-relaxed selection:bg-burgundy selection:text-white">
+
+    <!-- NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-cream/90 backdrop-blur-md border-b border-burgundy/10 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="group flex items-center space-x-2">
+                <span class="font-serif font-semibold text-2xl tracking-tight text-burgundy group-hover:text-burgundy-dark transition">G. Lwanzo Kasongo</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-charcoal/80">
+                <a href="about.html" class="hover:text-burgundy transition">About</a>
+                <a href="research.html" class="hover:text-burgundy transition">Research</a>
+                <a href="Education.html" class="hover:text-burgundy transition">Education</a>
+                <a href="publications.html" class="hover:text-burgundy transition">Publications</a>
+                <a href="skills.html" class="hover:text-burgundy transition">Skills</a>
+                <a href="contact.html" class="bg-burgundy text-white px-5 py-2.5 rounded-full hover:bg-burgundy-dark transition shadow-sm font-semibold tracking-wide">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden p-2 text-burgundy focus:outline-none" aria-label="Toggle Menu">
+                <i data-feather="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cream border-b border-burgundy/10 px-6 py-6 space-y-4 shadow-lg">
+            <a href="about.html" class="block text-base font-medium text-charcoal hover:text-burgundy">About</a>
+            <a href="research.html" class="block text-base font-medium text-charcoal hover:text-burgundy">Research</a>
+            <a href="Education.html" class="block text-base font-medium text-charcoal hover:text-burgundy">Education</a>
+            <a href="publications.html" class="block text-base font-medium text-charcoal hover:text-burgundy">Publications</a>
+            <a href="skills.html" class="block text-base font-medium text-charcoal hover:text-burgundy">Skills</a>
+            <a href="contact.html" class="block text-center bg-burgundy text-white px-5 py-3 rounded-xl font-semibold">Contact Me</a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-24">
+
+        <!-- HERO SECTION -->
+        <section class="relative pt-6 pb-12 overflow-hidden">
+            <!-- Decorative Dot Pattern -->
+            <div class="absolute top-0 right-0 w-32 h-32 dot-pattern pointer-events-none"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Column -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 bg-burgundy-soft text-burgundy px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
+                        <i data-feather="book-open" class="w-3.5 h-3.5"></i>
+                        <span>Academic Portfolio</span>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h1 class="font-serif text-5xl sm:text-6xl font-normal text-charcoal tracking-tight leading-tight">
+                            Gracia Lwanzo <br/>
+                            <span class="font-semibold text-burgundy">Kasongo</span>
+                        </h1>
+                        <p class="font-sans font-semibold text-lg text-burgundy/90">
+                            PhD Researcher — Political Science & International Relations
+                        </p>
+                        <p class="text-sm text-muted">
+                            <span class="font-semibold">UCLouvain</span> · University of Louvain, Belgium
+                        </p>
+                    </div>
+
+                    <!-- Modern Italic Tagline Box -->
+                    <div class="p-4 border-l-4 border-burgundy bg-cream-card/80 rounded-r-xl">
+                        <p class="font-serif italic text-xl text-charcoal/90 leading-snug">
+                            "Understand Power. Influence Change. Lead the Future."
+                        </p>
+                    </div>
+
+                    <p class="text-charcoal/80 text-base max-w-xl leading-relaxed">
+                        Bridging international law, humanitarian action, and political practice in conflict-affected regions — informed by training across Central Africa and Europe.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="#research" class="inline-flex items-center space-x-2 bg-burgundy text-white px-6 py-3 rounded-full font-medium shadow-md hover:bg-burgundy-dark transition">
+                            <span>Explore My Research</span>
+                            <i data-feather="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#contact" class="inline-flex items-center space-x-2 border-2 border-burgundy text-burgundy px-6 py-3 rounded-full font-medium hover:bg-burgundy hover:text-white transition">
+                            <span>Get in Touch</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right Column / Visual Block -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Background Frame Decoration -->
+                        <div class="absolute -inset-2 rounded-3xl bg-burgundy/10 transform rotate-2"></div>
+                        
+                        <!-- Main Image Container -->
+                        <div class="relative rounded-2xl overflow-hidden shadow-xl bg-cream-card border border-burgundy/10">
+                            <img src="./VX.PNG" 
+                                 alt="Gracia Lwanzo Kasongo"
+                                 class="w-full h-[460px] object-cover object-top">
+                            
+                            <!-- Floating Circular Badge (From Ref 3) -->
+                            <div class="absolute bottom-4 right-4 bg-navy text-white p-4 rounded-full w-32 h-32 flex flex-col items-center justify-center text-center shadow-2xl border-2 border-cream/20">
+                                <span class="font-serif italic text-xs leading-tight">Be Informed.<br/>Be Responsible.<br/><strong class="text-amber-400">Be a Leader.</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 01: ABOUT -->
+        <section id="about" class="pt-8 border-t border-burgundy/10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Section Header -->
+                <div class="lg:col-span-3">
+                    <div class="flex items-center space-x-3 text-burgundy">
+                        <span class="font-serif text-3xl font-light">01</span>
+                        <div class="h-px bg-burgundy/30 flex-grow"></div>
+                    </div>
+                    <h2 class="font-serif text-3xl font-bold text-charcoal mt-2">About</h2>
+                    <p class="font-display tracking-wider uppercase text-xs text-burgundy font-semibold mt-1">Background & Governance Focus</p>
+                </div>
+
+                <!-- Main Content & At a Glance Grid -->
+                <div class="lg:col-span-9 grid grid-cols-1 md:grid-cols-12 gap-8">
+                    
+                    <!-- Text Bio -->
+                    <div class="md:col-span-7 space-y-4 text-charcoal/85">
+                        <p class="text-base leading-relaxed">
+                            I am a doctoral researcher in Political Science and International Relations at <strong>UCLouvain (Catholic University of Leuven)</strong>, Belgium. My academic work bridges public international law, international humanitarian action, and the political realities of conflict-affected regions — informed by training across Central Africa and Europe.
+                        </p>
+                        <p class="text-base leading-relaxed">
+                            Born in Goma, in the Democratic Republic of the Congo, I bring both lived experience and rigorous academic training to questions of humanitarian governance, legal frameworks, and international response. My aim is to advance research that connects international legal norms with the everyday realities of humanitarian practice.
+                        </p>
+                        
+                        <!-- Callout Badge Box -->
+                        <div class="mt-6 p-4 bg-burgundy-soft/50 rounded-xl border border-burgundy/10 flex items-center space-x-3">
+                            <div class="p-2 bg-burgundy text-white rounded-lg">
+                                <i data-feather="check-circle" class="w-5 h-5"></i>
+                            </div>
+                            <p class="text-sm text-burgundy-dark font-medium">
+                                Core Objective: Advance legal-policy research that safeguards vulnerable populations in armed conflict.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- At a Glance Card (Poster Style Ref 3 mixed with Ref 2) -->
+                    <div class="md:col-span-5 bg-cream-card p-6 rounded-2xl border border-burgundy/15 shadow-sm space-y-4">
+                        <h3 class="font-serif font-bold text-lg text-burgundy border-b border-burgundy/10 pb-2">At a Glance</h3>
+                        
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-start space-x-3">
+                                <i data-feather="user" class="w-4 h-4 text-burgundy mt-1"></i>
+                                <div>
+                                    <span class="block text-xs uppercase font-semibold text-muted">Role</span>
+                                    <span class="font-medium">PhD Researcher</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3">
+                                <i data-feather="globe" class="w-4 h-4 text-burgundy mt-1"></i>
+                                <div>
+                                    <span class="block text-xs uppercase font-semibold text-muted">Field</span>
+                                    <span class="font-medium">Political Science & IR</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3">
+                                <i data-feather="square" class="w-4 h-4 text-burgundy mt-1"></i>
+                                <div>
+                                    <span class="block text-xs uppercase font-semibold text-muted">Institution</span>
+                                    <span class="font-medium">UCLouvain, Belgium</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3">
+                                <i data-feather="target" class="w-4 h-4 text-burgundy mt-1"></i>
+                                <div>
+                                    <span class="block text-xs uppercase font-semibold text-muted">Focus</span>
+                                    <span class="font-medium">Humanitarian Action & Law</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3">
+                                <i data-feather="message-circle" class="w-4 h-4 text-burgundy mt-1"></i>
+                                <div>
+                                    <span class="block text-xs uppercase font-semibold text-muted">Languages</span>
+                                    <span class="font-medium">FR · EN · SW · NL*</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Secondary City Visual Card -->
+                        <div class="mt-4 pt-3 border-t border-burgundy/10">
+                            <div class="relative rounded-xl overflow-hidden h-28">
+                                <img src="https://images.unsplash.com/photo-1568084680786-a84f91d1153c?auto=format&fit=crop&q=80&w=600" alt="Louvain-la-Neuve Campus" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-burgundy/20"></div>
+                                <span class="absolute bottom-2 left-2 text-[11px] bg-charcoal/80 text-white px-2 py-0.5 rounded">Louvain-la-Neuve, Belgium</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 02: RESEARCH FOCUS AREAS -->
+        <section id="research" class="pt-8 border-t border-burgundy/10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
+                <div class="lg:col-span-3">
+                    <div class="flex items-center space-x-3 text-burgundy">
+                        <span class="font-serif text-3xl font-light">02</span>
+                        <div class="h-px bg-burgundy/30 flex-grow"></div>
+                    </div>
+                    <h2 class="font-serif text-3xl font-bold text-charcoal mt-2">Research</h2>
+                </div>
+                <div class="lg:col-span-9">
+                    <p class="text-charcoal/80 max-w-2xl text-base">
+                        My research sits at the intersection of political science, international relations, and international humanitarian law — with particular attention to humanitarian governance in conflict-affected regions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 4 Column Block Structure (Inspired by Ref 3 'What You'll Learn' Card Structure) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Research Card 1 -->
+                <div class="bg-cream-card rounded-2xl p-6 border border-burgundy/15 hover:border-burgundy transition shadow-sm flex flex-col justify-between group">
+                    <div>
+                        <!-- Circle Icon Badge -->
+                        <div class="w-12 h-12 rounded-full bg-burgundy/10 text-burgundy flex items-center justify-center mb-4 group-hover:bg-burgundy group-hover:text-white transition">
+                            <i data-feather="scale" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-charcoal mb-2">International Humanitarian Law</h3>
+                        <p class="text-sm text-charcoal/75 leading-relaxed">
+                            Examining how legal norms shape humanitarian action and protection mechanisms in armed conflict zones.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-burgundy/10 flex items-center text-xs font-semibold text-burgundy">
+                        <span>LEARN MORE</span>
+                        <i data-feather="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+                    </div>
+                </div>
+
+                <!-- Research Card 2 -->
+                <div class="bg-cream-card rounded-2xl p-6 border border-burgundy/15 hover:border-burgundy transition shadow-sm flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-burgundy/10 text-burgundy flex items-center justify-center mb-4 group-hover:bg-burgundy group-hover:text-white transition">
+                            <i data-feather="users" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-charcoal mb-2">Humanitarian Governance</h3>
+                        <p class="text-sm text-charcoal/75 leading-relaxed">
+                            Studying policy, coordination, and practice within international and local humanitarian response frameworks.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-burgundy/10 flex items-center text-xs font-semibold text-burgundy">
+                        <span>LEARN MORE</span>
+                        <i data-feather="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+                    </div>
+                </div>
+
+                <!-- Research Card 3 (Featured Navy Accent Card from Ref 3) -->
+                <div class="bg-navy text-white rounded-2xl p-6 border border-navy hover:border-burgundy transition shadow-md flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-white/10 text-amber-400 flex items-center justify-center mb-4 group-hover:bg-amber-400 group-hover:text-navy transition">
+                            <i data-feather="compass" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-white mb-2">Conflict & Great Lakes</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            Contextual analysis of governance and humanitarian dynamics across Central Africa and the DRC region.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center text-xs font-semibold text-amber-400">
+                        <span>KEY REGIONAL FOCUS</span>
+                        <i data-feather="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+                    </div>
+                </div>
+
+                <!-- Research Card 4 -->
+                <div class="bg-cream-card rounded-2xl p-6 border border-burgundy/15 hover:border-burgundy transition shadow-sm flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-burgundy/10 text-burgundy flex items-center justify-center mb-4 group-hover:bg-burgundy group-hover:text-white transition">
+                            <i data-feather="award" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-charcoal mb-2">Political Science & IR</h3>
+                        <p class="text-sm text-charcoal/75 leading-relaxed">
+                            Theoretical and empirical approaches to institutions, legal norms, and global international order.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-burgundy/10 flex items-center text-xs font-semibold text-burgundy">
+                        <span>LEARN MORE</span>
+                        <i data-feather="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 03: EDUCATION TIMELINE -->
+        <section id="education" class="pt-8 border-t border-burgundy/10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
+                <div class="lg:col-span-3">
+                    <div class="flex items-center space-x-3 text-burgundy">
+                        <span class="font-serif text-3xl font-light">03</span>
+                        <div class="h-px bg-burgundy/30 flex-grow"></div>
+                    </div>
+                    <h2 class="font-serif text-3xl font-bold text-charcoal mt-2">Education</h2>
+                </div>
+                <div class="lg:col-span-9">
+                    <p class="font-serif italic text-lg text-charcoal/80">
+                        A strong foundation in law, humanitarian action, and international relations.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Timeline Structure -->
+            <div class="relative border-l-2 border-burgundy/20 ml-4 lg:ml-8 space-y-10">
+                
+                <!-- Timeline Item 1 -->
+                <div class="relative pl-8 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-burgundy border-4 border-cream"></div>
+                    <div class="bg-cream-card p-6 rounded-2xl border border-burgundy/10 shadow-sm space-y-2">
+                        <span class="inline-block text-xs font-bold text-burgundy bg-burgundy-soft px-2.5 py-0.5 rounded-full">2020 — 2025</span>
+                        <h3 class="font-serif font-bold text-xl text-charcoal">PhD Researcher — Political Science & International Relations</h3>
+                        <p class="text-sm font-semibold text-burgundy/90">UCLouvain (University of Louvain), Belgium</p>
+                        <p class="text-sm text-charcoal/75 pt-1">
+                            Advanced doctoral research at the intersection of political science, international relations, and humanitarian governance.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="relative pl-8 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-burgundy/50 border-4 border-cream"></div>
+                    <div class="bg-cream-card p-6 rounded-2xl border border-burgundy/10 shadow-sm space-y-2">
+                        <span class="inline-block text-xs font-bold text-burgundy bg-burgundy-soft px-2.5 py-0.5 rounded-full">2019 — 2020</span>
+                        <h3 class="font-serif font-bold text-xl text-charcoal">Master's Degree — International Humanitarian Action</h3>
+                        <p class="text-sm font-semibold text-burgundy/90">UCLouvain (University of Louvain), Belgium</p>
+                        <p class="text-sm text-charcoal/75 pt-1">
+                            Specialized training in humanitarian principles, coordination, policy, and practice with focus on legal frameworks.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="relative pl-8 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-burgundy/30 border-4 border-cream"></div>
+                    <div class="bg-cream-card p-6 rounded-2xl border border-burgundy/10 shadow-sm space-y-2">
+                        <span class="inline-block text-xs font-bold text-burgundy bg-burgundy-soft px-2.5 py-0.5 rounded-full">2017 — 2018</span>
+                        <h3 class="font-serif font-bold text-xl text-charcoal">Bachelor's Degree (Bac +5) — Public International Law</h3>
+                        <p class="text-sm font-semibold text-burgundy/90">UNIGOM (Université de Goma), DRC</p>
+                        <p class="text-sm text-charcoal/75 pt-1">
+                            Comprehensive legal training in public international law, human rights law, and international institutions.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 04: PUBLICATIONS & PRESENTATIONS -->
+        <section id="publications" class="pt-8 border-t border-burgundy/10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
+                <div class="lg:col-span-3">
+                    <div class="flex items-center space-x-3 text-burgundy">
+                        <span class="font-serif text-3xl font-light">04</span>
+                        <div class="h-px bg-burgundy/30 flex-grow"></div>
+                    </div>
+                    <h2 class="font-serif text-3xl font-bold text-charcoal mt-2 leading-snug">Publications & Presentations</h2>
+                </div>
+                <div class="lg:col-span-9">
+                    <p class="text-charcoal/80 text-base">
+                        Sharing research, ideas, and academic contributions across international conferences and journals.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Publications Box -->
+                <div class="bg-cream-card p-6 rounded-2xl border border-burgundy/15 flex items-start space-x-4 shadow-sm">
+                    <div class="p-3 bg-burgundy/10 text-burgundy rounded-xl">
+                        <i data-feather="file-text" class="w-6 h-6"></i>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center space-x-2">
+                            <h3 class="font-serif font-bold text-xl text-charcoal">Publications</h3>
+                            <span class="text-[10px] bg-amber-200 text-amber-900 font-bold px-2 py-0.5 rounded uppercase">Forthcoming</span>
+                        </div>
+                        <p class="text-sm text-charcoal/75">
+                            Peer-reviewed articles, book chapters, and conference papers will be cataloged here as published.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Presentations Box -->
+                <div class="bg-cream-card p-6 rounded-2xl border border-burgundy/15 flex items-start space-x-4 shadow-sm">
+                    <div class="p-3 bg-burgundy/10 text-burgundy rounded-xl">
+                        <i data-feather="tv" class="w-6 h-6"></i>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center space-x-2">
+                            <h3 class="font-serif font-bold text-xl text-charcoal">Presentations</h3>
+                            <span class="text-[10px] bg-amber-200 text-amber-900 font-bold px-2 py-0.5 rounded uppercase">Forthcoming</span>
+                        </div>
+                        <p class="text-sm text-charcoal/75">
+                            Invited talks, academic conference presentations, and panel seminars will be listed here.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 05: SKILLS & COMPETENCIES -->
+        <section id="skills" class="pt-8 border-t border-burgundy/10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
+                <div class="lg:col-span-3">
+                    <div class="flex items-center space-x-3 text-burgundy">
+                        <span class="font-serif text-3xl font-light">05</span>
+                        <div class="h-px bg-burgundy/30 flex-grow"></div>
+                    </div>
+                    <h2 class="font-serif text-3xl font-bold text-charcoal mt-2">Skills & Competencies</h2>
+                </div>
+                <div class="lg:col-span-9">
+                    <p class="text-charcoal/80 text-base">
+                        A multidisciplinary skill set developed for rigorous academic research and policy impact.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Skill Categories Grid (4 Pillars Ref 3 Style) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                
+                <!-- Skill Group 1 -->
+                <div class="bg-cream-card p-6 rounded-2xl border border-burgundy/10 space-y-3">
+                    <div class="flex items-center space-x-2 text-burgundy">
+                        <i data-feather="search" class="w-5 h-5"></i>
+                        <h3 class="font-serif font-bold text-lg text-charcoal">Research</h3>
+                    </div>
+                    <ul class="space-y-2 text-xs text-charcoal/80 font-medium">
+                        <li class="flex items-center"><i data-feather="check" class="w-3.5 h-3.5 text-burgundy mr-1.5"></i> Qualitative & legal research</li>
+                        <li class="flex items-center"><i data-feather="check" class="w-3.5 h-3.5 text-burgundy mr-1.5"></i> Political & policy analysis</li>
+                        <li class="flex items-center"><i data-feather="check" class="w-3.5 h-3.5 text-burgundy mr-1.5"></i> Comparative & contextual research</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Group 2 -->
+                <div class="bg-cream-card p-6 rounded-2xl border border-burgundy/10 space-y-3">
+                    <div class="flex items-center space-x-2 text-burgundy">
+                        <i data-feather="book" class="w-5 h-5"></i>
+                        <h3 class="font-serif font-bold text-lg text-charcoal">Legal</h3>
+                    </div>
+                    <ul class="space-y-2 text-xs text-charcoal/80 font-medium">
+                        <li class="flex items-center"><i data-feather="check" class="w-3.5 h-3.5 text-burgundy mr-1.5"></i> Public international law</li>
+                        <li class="flex items-center"><i data-feather="check" class="w-3.5 h-3.5 text-burgundy mr-1.5"></i> International humanitarian law</li>
+                        <li class="flex items-center"><i data-feather="check" class="w-3.5 h-3.5 text-burgundy mr-1.5"></i> Human rights frameworks</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Group 3 -->
+                <div class="bg-cream-card p-6 rounded-2xl border border-burgundy/10 space-y-3">
+                    <div class="flex items-center space-x-2 text-burgundy">
+                        <i data-feather="heart" class="w-5 h-5"></i>
+                        <h3 class="font-serif font-bold text-lg text-charcoal">Humanitarian</h3>
+                    </div>
+                    <ul class="space-y-2 text-xs text-charcoal/80 font-medium">
+                        <li class="flex items-center"><i data-feather="check" class="w-3.5 h-3.5 text-burgundy mr-1.5"></i> Coordination & policy</li>
+                        <li class="flex items-center"><i data-feather="check" class="w-3.5 h-3.5 text-burgundy mr-1.5"></i> Response standards</li>
+                        <li class="flex items-center"><i data-feather="check" class="w-3.5 h-3.5 text-burgundy mr-1.5"></i> Cross-cultural collaboration</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Group 4 -->
+                <div class="bg-cream-card p-6 rounded-2xl border border-burgundy/10 space-y-3">
+                    <div class="flex items-center space-x-2 text-burgundy">
+                        <i data-feather="message-square" class="w-5 h-5"></i>
+                        <h3 class="font-serif font-bold text-lg text-charcoal">Communication</h3>
+                    </div>
+                    <ul class="space-y-2 text-xs text-charcoal/80 font-medium">
+                        <li class="flex items-center"><i data-feather="check" class="w-3.5 h-3.5 text-burgundy mr-1.5"></i> Academic writing & publishing</li>
+                        <li class="flex items-center"><i data-feather="check" class="w-3.5 h-3.5 text-burgundy mr-1.5"></i> Multilingual communication</li>
+                        <li class="flex items-center"><i data-feather="check" class="w-3.5 h-3.5 text-burgundy mr-1.5"></i> Public speaking & teaching</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Language Proficiency Bars -->
+            <div class="bg-cream-card p-8 rounded-2xl border border-burgundy/15 space-y-6">
+                <div class="flex items-center space-x-2">
+                    <i data-feather="globe" class="w-5 h-5 text-burgundy"></i>
+                    <h3 class="font-serif font-bold text-xl text-charcoal">Language Proficiency</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span>French</span>
+                            <span class="text-burgundy">Native / Fluent</span>
+                        </div>
+                        <div class="w-full bg-cream-hover h-2 rounded-full overflow-hidden">
+                            <div class="bg-burgundy h-full w-full"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span>English</span>
+                            <span class="text-burgundy">Professional</span>
+                        </div>
+                        <div class="w-full bg-cream-hover h-2 rounded-full overflow-hidden">
+                            <div class="bg-burgundy h-full w-[85%]"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span>Swahili</span>
+                            <span class="text-burgundy">Working</span>
+                        </div>
+                        <div class="w-full bg-cream-hover h-2 rounded-full overflow-hidden">
+                            <div class="bg-burgundy h-full w-[70%]"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span>Dutch</span>
+                            <span class="text-burgundy">Basic</span>
+                        </div>
+                        <div class="w-full bg-cream-hover h-2 rounded-full overflow-hidden">
+                            <div class="bg-burgundy h-full w-[35%]"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 06: CONTACT FOOTER BLOCK (Ref 2 & Ref 3 Dark Footer Blend) -->
+        <section id="contact" class="bg-burgundy text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+            <!-- Decorative Dot Pattern Overlay -->
+            <div class="absolute -right-10 -bottom-10 w-48 h-48 opacity-10 dot-pattern pointer-events-none"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="flex items-center space-x-3 text-amber-300">
+                        <span class="font-serif text-3xl font-light">06</span>
+                        <div class="h-px bg-amber-300/40 flex-grow"></div>
+                    </div>
+                    <h2 class="font-serif text-3xl font-bold tracking-wide">Contact</h2>
+                    <p class="text-white/80 text-sm max-w-md">
+                        I welcome inquiries regarding research collaborations, academic exchanges, and humanitarian policy discussions.
+                    </p>
+                </div>
+
+                <!-- Contact Details Grid -->
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
+                    
+                    <div class="flex items-start space-x-3 bg-burgundy-dark/50 p-4 rounded-xl border border-white/10">
+                        <i data-feather="mail" class="w-5 h-5 text-amber-300 mt-0.5"></i>
+                        <div>
+                            <span class="block text-xs uppercase text-amber-200/80 font-bold">Email</span>
+                            <a href="mailto:gracia.lwanzo@uclouvain.be" class="hover:underline text-white font-medium block">gracia.lwanzo@uclouvain.be</a>
+                            <a href="mailto:gracialwanzo200@gmail.com" class="hover:underline text-white/80 text-xs block mt-0.5">gracialwanzo200@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-3 bg-burgundy-dark/50 p-4 rounded-xl border border-white/10">
+                        <i data-feather="phone" class="w-5 h-5 text-amber-300 mt-0.5"></i>
+                        <div>
+                            <span class="block text-xs uppercase text-amber-200/80 font-bold">Phone</span>
+                            <span class="font-medium">+32 487 69 11 97</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-3 bg-burgundy-dark/50 p-4 rounded-xl border border-white/10">
+                        <i data-feather="map-pin" class="w-5 h-5 text-amber-300 mt-0.5"></i>
+                        <div>
+                            <span class="block text-xs uppercase text-amber-200/80 font-bold">Address</span>
+                            <span class="font-medium">Avenue de la Palette 13/201<br/>Bruyère, Louvain-la-Neuve, Belgium</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-3 bg-burgundy-dark/50 p-4 rounded-xl border border-white/10">
+                        <i data-feather="globe" class="w-5 h-5 text-amber-300 mt-0.5"></i>
+                        <div>
+                            <span class="block text-xs uppercase text-amber-200/80 font-bold">Affiliation</span>
+                            <span class="font-medium">UCLouvain<br/>University of Louvain, Belgium</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER COPYRIGHT -->
+    <footer class="border-t border-burgundy/10 py-8 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-xs text-muted space-y-4 sm:space-y-0">
+            <p>© 2026 Gracia Lwanzo Kasongo. All rights reserved.</p>
+            <p class="font-serif italic">Academic Portfolio</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT FOR FEATHER ICONS & MOBILE MENU -->
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Mobile Menu Toggle logic
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu on click link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

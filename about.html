@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — Gracia Lwanzo Kasongo</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: {
+                            DEFAULT: '#f8f6f0',
+                            card: '#f2eee3',
+                            hover: '#eae4d3',
+                        },
+                        burgundy: {
+                            DEFAULT: '#6B1D2F',
+                            dark: '#4d1220',
+                            light: '#8b273e',
+                            soft: '#f3e8eb',
+                        },
+                        navy: {
+                            DEFAULT: '#1a2836',
+                            light: '#25384b',
+                        },
+                        charcoal: '#222222',
+                        muted: '#666666'
+                    },
+                    fontFamily: {
+                        serif: ['Newsreader', 'Georgia', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                        cinzel: ['Cinzel', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .dot-pattern {
+            background-image: radial-gradient(#6B1D2F 1.5px, transparent 1.5px);
+            background-size: 14px 14px;
+            opacity: 0.25;
+        }
+    </style>
+</head>
+<body class="bg-cream text-charcoal font-sans antialiased leading-relaxed selection:bg-burgundy selection:text-white">
+
+    <!-- NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-cream/90 backdrop-blur-md border-b border-burgundy/10 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="group flex items-center space-x-2">
+                <span class="font-serif font-semibold text-2xl tracking-tight text-burgundy group-hover:text-burgundy-dark transition">G. Lwanzo Kasongo</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-charcoal/80">
+                <a href="index.html" class="hover:text-burgundy transition">Home</a>
+                <a href="about.html" class="text-burgundy font-semibold border-b-2 border-burgundy pb-0.5">About</a>
+                <a href="research.html" class="hover:text-burgundy transition">Research</a>
+                <a href="Education.html" class="hover:text-burgundy transition">Education</a>
+                <a href="publications.html" class="hover:text-burgundy transition">Publications</a>
+                <a href="skills.html" class="hover:text-burgundy transition">Skills</a>
+                <a href="contact.html" class="bg-burgundy text-white px-5 py-2.5 rounded-full hover:bg-burgundy-dark transition shadow-sm font-semibold tracking-wide">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden p-2 text-burgundy focus:outline-none" aria-label="Toggle Menu">
+                <i data-feather="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cream border-b border-burgundy/10 px-6 py-6 space-y-4 shadow-lg">
+            <a href="index.html" class="block text-base font-medium text-charcoal hover:text-burgundy">Home</a>
+            <a href="about.html" class="block text-base font-semibold text-burgundy">About</a>
+            <a href="research.html" class="block text-base font-medium text-charcoal hover:text-burgundy">Research</a>
+            <a href="Education.html" class="block text-base font-medium text-charcoal hover:text-burgundy">Education</a>
+            <a href="publications.html" class="block text-base font-medium text-charcoal hover:text-burgundy">Publications</a>
+            <a href="skills.html" class="block text-base font-medium text-charcoal hover:text-burgundy">Skills</a>
+            <a href="contact.html" class="block text-center bg-burgundy text-white px-5 py-3 rounded-xl font-semibold">Contact Me</a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-20">
+
+        <!-- HERO HEADER SECTION -->
+        <section class="relative pt-4 pb-8 overflow-hidden">
+            <div class="absolute top-0 right-0 w-36 h-36 dot-pattern pointer-events-none"></div>
+
+            <div class="space-y-4 max-w-3xl">
+                <div class="inline-flex items-center space-x-2 bg-burgundy-soft text-burgundy px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
+                    <i data-feather="user" class="w-3.5 h-3.5"></i>
+                    <span>Biography & Academic Journey</span>
+                </div>
+                <h1 class="font-serif text-4xl sm:text-5xl font-bold text-charcoal tracking-tight">
+                    About <span class="text-burgundy">Gracia Lwanzo Kasongo</span>
+                </h1>
+                <p class="font-serif italic text-xl text-burgundy/90">
+                    "Bridging international law, humanitarian action, and political practice in conflict-affected regions."
+                </p>
+            </div>
+        </section>
+
+        <!-- MAIN BIOGRAPHY SECTION -->
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            <!-- Left: Portrait & Visual Badges -->
+            <div class="lg:col-span-5 space-y-6">
+                <div class="relative rounded-2xl overflow-hidden shadow-xl border border-burgundy/15 bg-cream-card">
+                    <img src="./VX.PNG" 
+                         alt="Gracia Lwanzo Kasongo" 
+                         class="w-full h-[480px] object-cover object-top">
+                    
+                    <!-- Floating Circular Badge -->
+                    <div class="absolute bottom-4 right-4 bg-navy text-white p-4 rounded-full w-32 h-32 flex flex-col items-center justify-center text-center shadow-2xl border-2 border-cream/20">
+                        <span class="font-serif italic text-xs leading-tight">Be Informed.<br/>Be Responsible.<br/><strong class="text-amber-400">Be a Leader.</strong></span>
+                    </div>
+                </div>
+
+                <!-- At a Glance Box -->
+                <div class="bg-cream-card p-6 rounded-2xl border border-burgundy/15 shadow-sm space-y-4">
+                    <h3 class="font-serif font-bold text-lg text-burgundy border-b border-burgundy/10 pb-2">At a Glance</h3>
+                    
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-start space-x-3">
+                            <i data-feather="user" class="w-4 h-4 text-burgundy mt-1"></i>
+                            <div>
+                                <span class="block text-xs uppercase font-semibold text-muted">Current Role</span>
+                                <span class="font-medium">PhD Researcher in Political Science & IR</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <i data-feather="book-open" class="w-4 h-4 text-burgundy mt-1"></i>
+                            <div>
+                                <span class="block text-xs uppercase font-semibold text-muted">Institution</span>
+                                <span class="font-medium">UCLouvain (Catholic University of Leuven), Belgium</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <i data-feather="map-pin" class="w-4 h-4 text-burgundy mt-1"></i>
+                            <div>
+                                <span class="block text-xs uppercase font-semibold text-muted">Origin</span>
+                                <span class="font-medium">Goma, Democratic Republic of the Congo (DRC)</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <i data-feather="globe" class="w-4 h-4 text-burgundy mt-1"></i>
+                            <div>
+                                <span class="block text-xs uppercase font-semibold text-muted">Languages</span>
+                                <span class="font-medium">French (Native) · English (Professional) · Swahili (Working) · Dutch (Basic)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Extended Biography Text -->
+            <div class="lg:col-span-7 space-y-8 text-charcoal/85 text-base leading-relaxed">
+                
+                <div class="space-y-4">
+                    <h2 class="font-serif text-2xl font-bold text-charcoal border-l-4 border-burgundy pl-4">
+                        Academic Overview
+                    </h2>
+                    <p>
+                        I am a doctoral researcher in Political Science and International Relations at <strong>UCLouvain (Catholic University of Leuven)</strong>, Belgium. My academic work sits at the intersection of public international law, international humanitarian action, and the political realities of conflict-affected regions.
+                    </p>
+                    <p>
+                        My doctoral study explores how international legal norms interact with local and international humanitarian responses, examining how policy, coordination, and governance mechanisms operate during crises.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h2 class="font-serif text-2xl font-bold text-charcoal border-l-4 border-burgundy pl-4">
+                        Origins & Lived Experience
+                    </h2>
+                    <p>
+                        Born in Goma, in the Democratic Republic of the Congo (DRC), my academic perspective is deeply informed by lived experience in a region shaped by complex geopolitical dynamics and enduring humanitarian challenges.
+                    </p>
+                    <p>
+                        Combining this firsthand understanding with rigorous legal and political training across Central Africa and Europe, I aim to connect abstract legal principles with the practical everyday realities of humanitarian intervention.
+                    </p>
+                </div>
+
+                <!-- Callout Banner Card (Poster Style Ref 3) -->
+                <div class="bg-navy text-white p-6 rounded-2xl shadow-md space-y-3">
+                    <div class="flex items-center space-x-2 text-amber-400 font-bold text-sm tracking-wide uppercase">
+                        <i data-feather="shield" class="w-4 h-4"></i>
+                        <span>Research Purpose</span>
+                    </div>
+                    <p class="font-serif italic text-lg text-slate-100">
+                        "To advance legal-policy research that safeguards vulnerable populations and enhances governance in conflict-affected regions."
+                    </p>
+                </div>
+
+                <!-- Key Pillars Grid (Ref 3 Layout Style) -->
+                <div class="pt-4 space-y-4">
+                    <h2 class="font-serif text-2xl font-bold text-charcoal border-l-4 border-burgundy pl-4">
+                        Core Pillars of Research
+                    </h2>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-cream-card p-4 rounded-xl border border-burgundy/10 flex items-start space-x-3">
+                            <div class="p-2 bg-burgundy/10 text-burgundy rounded-lg">
+                                <i data-feather="scale" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-sm text-charcoal">International Humanitarian Law</h4>
+                                <p class="text-xs text-muted mt-1">Examining legal frameworks protecting non-combatants during conflict.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-cream-card p-4 rounded-xl border border-burgundy/10 flex items-start space-x-3">
+                            <div class="p-2 bg-burgundy/10 text-burgundy rounded-lg">
+                                <i data-feather="users" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-sm text-charcoal">Humanitarian Governance</h4>
+                                <p class="text-xs text-muted mt-1">Analyzing institutional policy, ethics, and field-level coordination.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-cream-card p-4 rounded-xl border border-burgundy/10 flex items-start space-x-3">
+                            <div class="p-2 bg-burgundy/10 text-burgundy rounded-lg">
+                                <i data-feather="compass" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-sm text-charcoal">Great Lakes Region Focus</h4>
+                                <p class="text-xs text-muted mt-1">Deep contextual analysis of political dynamics in Central Africa.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-cream-card p-4 rounded-xl border border-burgundy/10 flex items-start space-x-3">
+                            <div class="p-2 bg-burgundy/10 text-burgundy rounded-lg">
+                                <i data-feather="award" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-sm text-charcoal">Political Science & IR</h4>
+                                <p class="text-xs text-muted mt-1">Studying state institutions, global order, and power structures.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-6 flex flex-wrap gap-4">
+                    <a href="index.html#contact" class="inline-flex items-center space-x-2 bg-burgundy text-white px-6 py-3 rounded-full font-medium shadow-md hover:bg-burgundy-dark transition">
+                        <i data-feather="mail" class="w-4 h-4"></i>
+                        <span>Contact Gracia</span>
+                    </a>
+                    <a href="index.html#education" class="inline-flex items-center space-x-2 border-2 border-burgundy text-burgundy px-6 py-3 rounded-full font-medium hover:bg-burgundy hover:text-white transition">
+                        <span>View Academic Background</span>
+                        <i data-feather="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER COPYRIGHT -->
+    <footer class="border-t border-burgundy/10 py-8 bg-cream mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-xs text-muted space-y-4 sm:space-y-0">
+            <p>© 2026 Gracia Lwanzo Kasongo. All rights reserved.</p>
+            <p class="font-serif italic">Academic Portfolio</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT FOR FEATHER ICONS & MOBILE MENU -->
+    <script>
+        feather.replace();
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

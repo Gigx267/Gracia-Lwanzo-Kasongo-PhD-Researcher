@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications — Gracia Lwanzo Kasongo</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236B1D2F'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' font-family='Georgia, serif' font-size='38' font-weight='700' fill='%23f8f6f0'%3EG%3C/text%3E%3C/svg%3E" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: { DEFAULT: '#f8f6f0', card: '#f2eee3', hover: '#eae4d3' },
+                        burgundy: { DEFAULT: '#6B1D2F', dark: '#4d1220', light: '#8b273e', soft: '#f3e8eb' },
+                        navy: { DEFAULT: '#1a2836', light: '#25384b' },
+                        charcoal: '#222222',
+                        muted: '#666666'
+                    },
+                    fontFamily: {
+                        serif: ['Newsreader', 'Georgia', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                        cinzel: ['Cinzel', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .dot-pattern {
+            background-image: radial-gradient(#6B1D2F 1.5px, transparent 1.5px);
+            background-size: 14px 14px;
+            opacity: 0.25;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f8f6f0; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #6B1D2F; border-radius: 3px; }
+        .pub-item { transition: all 0.25s ease; }
+        .pub-item:hover { transform: translateY(-2px); }
+    </style>
+</head>
+<body class="bg-cream text-charcoal font-sans antialiased leading-relaxed selection:bg-burgundy selection:text-white">
+
+    <!-- NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-cream/90 backdrop-blur-md border-b border-burgundy/10 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="group flex items-center space-x-2">
+                <span class="font-serif font-semibold text-2xl tracking-tight text-burgundy group-hover:text-burgundy-dark transition">G. Lwanzo Kasongo</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-charcoal/80">
+                <a href="about.html" class="hover:text-burgundy transition">About</a>
+                <a href="research.html" class="hover:text-burgundy transition">Research</a>
+                <a href="Education.html" class="hover:text-burgundy transition">Education</a>
+                <a href="publications.html" class="text-burgundy font-semibold border-b-2 border-burgundy pb-1">Publications</a>
+                <a href="skills.html" class="hover:text-burgundy transition">Skills</a>
+                <a href="contact.html" class="bg-burgundy text-white px-5 py-2.5 rounded-full hover:bg-burgundy-dark transition shadow-sm font-semibold tracking-wide">Contact</a>
+            </nav>
+            <button id="menu-btn" class="md:hidden p-2 text-burgundy focus:outline-none" aria-label="Toggle Menu">
+                <i data-feather="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-cream border-b border-burgundy/10 px-6 py-6 space-y-4 shadow-lg">
+            <a href="about.html" class="block text-base font-medium text-charcoal hover:text-burgundy">About</a>
+            <a href="research.html" class="block text-base font-medium text-charcoal hover:text-burgundy">Research</a>
+            <a href="Education.html" class="block text-base font-medium text-charcoal hover:text-burgundy">Education</a>
+            <a href="publications.html" class="block text-base font-semibold text-burgundy">Publications</a>
+            <a href="skills.html" class="block text-base font-medium text-charcoal hover:text-burgundy">Skills</a>
+            <a href="contact.html" class="block text-center bg-burgundy text-white px-5 py-3 rounded-xl font-semibold">Contact Me</a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-20">
+
+        <!-- HERO -->
+        <section class="relative pt-6 pb-4 overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 dot-pattern pointer-events-none"></div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+                <div class="lg:col-span-8 space-y-5">
+                    <div class="inline-flex items-center space-x-2 bg-burgundy-soft text-burgundy px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
+                        <i data-feather="file-text" class="w-3.5 h-3.5"></i>
+                        <span>Section 04 — Scholarly Output</span>
+                    </div>
+                    <h1 class="font-serif text-5xl sm:text-6xl font-normal text-charcoal tracking-tight leading-tight">
+                        Publications & <br/>
+                        <span class="font-semibold text-burgundy">Presentations</span>
+                    </h1>
+                    <p class="text-charcoal/75 text-lg max-w-2xl leading-relaxed">
+                        Peer-reviewed articles, book chapters, conference papers, and invited lectures bridging political science, international law, and cultural heritage restitution.
+                    </p>
+                </div>
+                <div class="lg:col-span-4">
+                    <div class="bg-navy text-white rounded-2xl p-6 shadow-lg border border-navy-light relative overflow-hidden">
+                        <div class="absolute -right-6 -bottom-6 w-24 h-24 opacity-10 dot-pattern"></div>
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div>
+                                <p class="font-serif text-4xl font-bold text-amber-400">17</p>
+                                <p class="text-[11px] uppercase tracking-wider text-slate-300 mt-1">Publications</p>
+                            </div>
+                            <div>
+                                <p class="font-serif text-4xl font-bold text-amber-400">12+</p>
+                                <p class="text-[11px] uppercase tracking-wider text-slate-300 mt-1">Conferences</p>
+                            </div>
+                            <div>
+                                <p class="font-serif text-4xl font-bold text-amber-400">5</p>
+                                <p class="text-[11px] uppercase tracking-wider text-slate-300 mt-1">Expert Talks</p>
+                            </div>
+                            <div>
+                                <p class="font-serif text-4xl font-bold text-amber-400">1</p>
+                                <p class="text-[11px] uppercase tracking-wider text-slate-300 mt-1">IHL Award</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FILTER TABS -->
+        <section class="pt-2">
+            <div class="flex flex-wrap items-center gap-2 border-b border-burgundy/10 pb-4">
+                <button data-filter="all" class="filter-btn active px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition bg-burgundy text-white shadow-sm">All Works</button>
+                <button data-filter="journal" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition bg-cream-card text-charcoal/70 hover:bg-burgundy-soft hover:text-burgundy border border-burgundy/10">Journal Articles</button>
+                <button data-filter="chapter" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition bg-cream-card text-charcoal/70 hover:bg-burgundy-soft hover:text-burgundy border border-burgundy/10">Book Chapters</button>
+                <button data-filter="conference" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition bg-cream-card text-charcoal/70 hover:bg-burgundy-soft hover:text-burgundy border border-burgundy/10">Conference Papers</button>
+                <button data-filter="thesis" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition bg-cream-card text-charcoal/70 hover:bg-burgundy-soft hover:text-burgundy border border-burgundy/10">Theses</button>
+            </div>
+        </section>
+
+        <!-- PUBLICATIONS LIST -->
+        <section id="pub-list" class="space-y-5 -mt-12">
+
+            <!-- 2026 -->
+            <article class="pub-item bg-cream-card rounded-2xl border border-burgundy/15 hover:border-burgundy transition shadow-sm p-6 flex flex-col md:flex-row md:items-start md:space-x-6" data-category="chapter">
+                <div class="flex-shrink-0 mb-3 md:mb-0">
+                    <span class="font-serif text-2xl font-bold text-burgundy">2026</span>
+                    <span class="block text-[10px] uppercase tracking-wider font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded mt-1 text-center">In Press</span>
+                </div>
+                <div class="flex-1 space-y-2">
+                    <span class="inline-block text-[10px] uppercase tracking-wider font-bold text-burgundy bg-burgundy-soft px-2 py-0.5 rounded">Book Chapter</span>
+                    <h3 class="font-serif font-semibold text-lg text-charcoal leading-snug">(In)visibility of Black Body in Francophone Media Space: Afropean Aesthetics in Theater, Dance and Politics</h3>
+                    <p class="text-sm text-charcoal/70 italic">Lwanzo Kasongo, G. &amp; Dre A. Stevellia Moussavou Nyama (2026). Forthcoming in the Springer book series <em>Gender, Justice, and Legal Feminism</em>.</p>
+                    <div class="flex flex-wrap gap-2 pt-1">
+                        <span class="text-[10px] bg-cream-hover text-charcoal/70 px-2 py-0.5 rounded-full font-medium">Springer</span>
+                        <span class="text-[10px] bg-cream-hover text-charcoal/70 px-2 py-0.5 rounded-full font-medium">Gender Studies</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 2025 -->
+            <article class="pub-item bg-cream-card rounded-2xl border border-burgundy/15 hover:border-burgundy transition shadow-sm p-6 flex flex-col md:flex-row md:items-start md:space-x-6" data-category="chapter">
+                <div class="flex-shrink-0 mb-3 md:mb-0">
+                    <span class="font-serif text-2xl font-bold text-burgundy">2025</span>
+                </div>
+                <div class="flex-1 space-y-2">
+                    <span class="inline-block text-[10px] uppercase tracking-wider font-bold text-burgundy bg-burgundy-soft px-2 py-0.5 rounded">Book Chapter</span>
+                    <h3 class="font-serif font-semibold text-lg text-charcoal leading-snug">Building an Afrocolonialism: Reimagining Congolese Cultural Heritage in Contemporary Architecture and Art</h3>
+                    <p class="text-sm text-charcoal/70 italic">Kasongo, G.L. &amp; Joel, B.A. (2025). In Castanho, R., Hayder, G., Ahmed, S. (eds.), <em>Urban Identity Explored: Architecture and Arts in Cities</em>. CITAA 2023. Advances in Science, Technology &amp; Innovation. Springer, Cham.</p>
+                    <a href="https://doi.org/10.1007/978-3-031-60641-0_6" target="_blank" rel="noopener" class="inline-flex items-center text-xs font-semibold text-burgundy hover:text-burgundy-dark transition">
+                        <i data-feather="external-link" class="w-3.5 h-3.5 mr-1"></i> DOI: 10.1007/978-3-031-60641-0_6
+                    </a>
+                </div>
+            </article>
+
+            <!-- 2025 Journal -->
+            <article class="pub-item bg-cream-card rounded-2xl border border-burgundy/15 hover:border-burgundy transition shadow-sm p-6 flex flex-col md:flex-row md:items-start md:space-x-6" data-category="journal">
+                <div class="flex-shrink-0 mb-3 md:mb-0">
+                    <span class="font-serif text-2xl font-bold text-burgundy">2025</span>
+                </div>
+                <div class="flex-1 space-y-2">
+                    <span class="inline-block text-[10px] uppercase tracking-wider font-bold text-burgundy bg-burgundy-soft px-2 py-0.5 rounded">Journal Article</span>
+                    <h3 class="font-serif font-semibold text-lg text-charcoal leading-snug">A General Introduction to Art Law in the Democratic Republic of Congo</h3>
+                    <p class="text-sm text-charcoal/70 italic">Lwanzo Kasongo, G. (2025). <em>Art Law Review — Lexology</em>.</p>
+                </div>
+            </article>
+
+            <!-- 2024 Journal -->
+            <article class="pub-item bg-cream-card rounded-2xl border border-burgundy/15 hover:border-burgundy transition shadow-sm p-6 flex flex-col md:flex-row md:items-start md:space-x-6" data-category="journal">
+                <div class="flex-shrink-0 mb-3 md:mb-0">
+                    <span class="font-serif text-2xl font-bold text-burgundy">2024</span>
+                </div>
+                <div class="flex-1 space-y-2">
+                    <span class="inline-block text-[10px] uppercase tracking-wider font-bold text-burgundy bg-burgundy-soft px-2 py-0.5 rounded">Journal Article</span>
+                    <h3 class="font-serif font-semibold text-lg text-charcoal leading-snug">A General Introduction to Art Law in the Democratic Republic of Congo</h3>
+                    <p class="text-sm text-charcoal/70 italic">Lwanzo Kasongo, G. (2024). <em>Art Law Review — Lexology</em>.</p>
+                </div>
+            </article>
+
+            <!-- 2024 OpinioJuris -->
+            <article class="pub-item bg-cream-card rounded-2xl border border-burgundy/15 hover:border-burgundy transition shadow-sm p-6 flex flex-col md:flex-row md:items-start md:space-x-6" data-category="journal">
+                <div class="flex-shrink-0 mb-3 md:mb-0">
+                    <span class="font-serif text-2xl font-bold text-burgundy">2024</span>
+                </div>
+                <div class="flex-1 space-y-2">
+                    <span class="inline-block text-[10px] uppercase tracking-wider font-bold text-burgundy bg-burgundy-soft px-2 py-0.5 rounded">Journal Article</span>
+                    <h3 class="font-serif font-semibold text-lg text-charcoal leading-snug">Unraveling the Complexity of Human Remains Restitution in the Democratic Republic of Congo</h3>
+                    <p class="text-sm text-charcoal/70 italic">Lwanzo Kasongo, G. (2024). <em>OpinioJuris</em>, 18 April 2024.</p>
+                </div>
+            </article>
+
+            <!-- 2023 Permanences critiques -->
+            <article class="pub-item bg-cream-card rounded-2xl border border-burgundy/15 hover:border-burgundy transition shadow-sm p-6 flex flex-col md:flex-row md:items-start md:space-x-6" data-category="journal">
+                <div class="flex-shrink-0 mb-3 md:mb-0">
+                    <span class="font-serif text-2xl font-bold text-burgundy">2023</span>
+                </div>
+                <div class="flex-1 space-y-2">
+                    <span class="inline-block text-[10px] uppercase tracking-wider font-bold text-burgundy bg-burgundy-soft px-2 py-0.5 rounded">Journal Article</span>
+                    <h3 class="font-serif font-semibold text-lg text-charcoal leading-snug">Le refus de s'excuser : Une nouvelle forme de violence coloniale Belgo-Congolaise ?</h3>
+                    <p class="text-sm text-charcoal/70 italic">Lwanzo Kasongo, G. (2023). <em>Permanences critiques</em>, pp. 63–72.</p>
+                </div>
+            </article>
+
+            <!-- 2023 Afrique XXI -->
+            <article class="pub-item bg-cream-card rounded-2xl border border-burgundy/15 hover:border-burgundy transition shadow-sm p-6 flex flex-col md:flex-row md:items-start md:space-x-6" data-category="journal">
+                <div class="flex-shrink-0 mb-3 md:mb-0">
+                    <span class="font-serif text-2xl font-bold text-burgundy">2023</span>
+                </div>
+                <div class="flex-1 space-y-2">
+                    <span class="inline-block text-[10px] uppercase tracking-wider font-bold text-burgundy bg-burgundy-soft px-2 py-0.5 rounded">Journal Article</span>
+                    <h3 class="font-serif font-semibold text-lg text-charcoal leading-snug">« Nous ne voulons pas de ces fantômes » : Quand la restitution des restes humains fait débat</h3>
+                    <p class="text-sm text-charcoal/70 italic">Lwanzo Kasongo, G. (2023). <em>Afrique XXI</em>.</p>
+                </div>
+            </article>
+
+            <!-- 2023 Max Planck -->
+            <article class="pub-item bg-cream-card rounded-2xl border border-burgundy/15 hover:border-burgundy transition shadow-sm p-6 flex flex-col md:flex-row md:items-start md:space-x-6" data-category="conference">
+                <div class="flex-shrink-0 mb-3 md:mb-0">
+                    <span class="font-serif text-2xl font-bold text-burgundy">2023</span>
+                </div>
+                <div class="flex-1 space-y-2">
+                    <span class="inline-block text-[10px] uppercase tracking-wider font-bold text-burgundy bg-burgundy-soft px-2 py-0.5 rounded">Conference Paper</span>
+                    <h3 class="font-serif font-semibold text-lg text-charcoal leading-snug">The Objects of an Intertwined History: How Does Restitution Decolonize Narratives?</h3>
+                    <p class="text-sm text-charcoal/70 italic">Lwanzo Kasongo, G. (2023). In <em>Colonialism and Transgenerational Memory in Europe</em>. Max Planck Institute for Social Anthropology, Halle.</p>
+                </div>
+            </article>
+
+            <!-- 2023 Girubuntu -->
+            <article class="pub-item bg-cream-card rounded-2xl border border-burgundy/15 hover:border-burgundy transition shadow-sm p-6 flex flex-col md:flex-row md:items-start md:space-x-6" data-category="conference">
+                <div class="flex-shrink-0 mb-3 md:mb-0">
+                    <span class="font-serif text-2xl font-bold text-burgundy">2023</span>
+                </div>
+                <div class="flex-1 space-y-2">
+                    <span class="inline-block text-[10px] uppercase tracking-wider font-bold text-burgundy bg-burgundy-soft px-2 py-0.5 rounded">Conference Paper</span>
+                    <h3 class="font-serif font-semibold text-lg text-charcoal leading-snug">Art in Conflict Resolution: Negotiating the Restitution of Congolese Cultural Heritage</h3>
+                    <p class="text-sm text-charcoal/70 italic">Lwanzo Kasongo, G. (2023). <em>Histoire coloniale — Girubuntu Peace Academy</em>, under supervision of Prof. Klaus Baumann, University of Freiburg.</p>
+                </div>
+            </article>
+
+            <!-- 2023 Provenier -->
+            <article class="pub-item bg-cream-card rounded-2xl border border-burgundy/15 hover:border-burgundy transition shadow-sm p-6 flex flex-col md:flex-row md:items-start md:space-x-6" data-category="conference">
+                <div class="flex-shrink-0 mb-3 md:mb-0">
+                    <span class="font-serif text-2xl font-bold text-burgundy">2023</span>
+                </div>
+                <div class="flex-1 space-y-2">
+                    <span class="inline-block text-[10px] uppercase tracking-wider font-bold text-burgundy bg-burgundy-soft px-2 py-0.5 rounded">Conference Paper</span>
+                    <h3 class="font-serif font-semibold text-lg text-charcoal leading-snug">Decolonizing Negotiation for the Restitution of Congolese Heritage Acquired During Belgian Colonization</h3>
+                    <p class="text-sm text-charcoal/70 italic">Lwanzo Kasongo, G. (2023). In <em>Provenier Journal</em>, contribution to the international conference "The Long History of Claims for the Return of Cultural Heritage from Colonial Contexts".</p>
+                </div>
+            </article>
+
+            <!-- 2022 -->
+            <article class="pub-item bg-cream-card rounded-2xl border border-burgundy/15 hover:border-burgundy transition shadow-sm p-6 flex flex-col md:flex-row md:items-start md:space-x-6" data-category="journal">
+                <div class="flex-shrink-0 mb-3 md:mb-0">
+                    <span class="font-serif text-2xl font-bold text-burgundy">2022</span>
+                </div>
+                <div class="flex-1 space-y-2">
+                    <span class="inline-block text-[10px] uppercase tracking-wider font-bold text-burgundy bg-burgundy-soft px-2 py-0.5 rounded">Journal Article</span>
+                    <h3 class="font-serif font-semibold text-lg text-charcoal leading-snug">Altruismus oder Neokolonialismus? Umfang und Grenzen der belgischen Restitution von kongolesischem Kulturerbe</h3>
+                    <p class="text-sm text-charcoal/70 italic">Lwanzo Kasongo, G. (2022). <em>Wissenschaft und Frieden: Neokolonialismus</em>, 2, pp. 43–46.</p>
+                </div>
+            </article>
+
+            <!-- 2021 Völkerrechtsblog -->
+            <article class="pub-item bg-cream-card rounded-2xl border border-burgundy/15 hover:border-burgundy transition shadow-sm p-6 flex flex-col md:flex-row md:items-start md:space-x-6" data-category="journal">
+                <div class="flex-shrink-0 mb-3 md:mb-0">
+                    <span class="font-serif text-2xl font-bold text-burgundy">2021</span>
+                </div>
+                <div class="flex-1 space-y-2">
+                    <span class="inline-block text-[10px] uppercase tracking-wider font-bold text-burgundy bg-burgundy-soft px-2 py-0.5 rounded">Journal Article</span>
+                    <h3 class="font-serif font-semibold text-lg text-charcoal leading-snug">Is Immaterial Restitution Enough? A Belgian Approach to the Human Right of Access to Cultural Heritage</h3>
+                    <p class="text-sm text-charcoal/70 italic">Lwanzo Kasongo, G. (2021). <em>Völkerrechtsblog</em>, 3 November 2021.</p>
+                    <a href="https://doi.org/10.17176/20211103-110837-0" target="_blank" rel="noopener" class="inline-flex items-center text-xs font-semibold text-burgundy hover:text-burgundy-dark transition">
+                        <i data-feather="external-link" class="w-3.5 h-3.5 mr-1"></i> DOI: 10.17176/20211103-110837-0
+                    </a>
+                </div>
+            </article>
+
+            <!-- 2021 L'Harmattan -->
+            <article class="pub-item bg-cream-card rounded-2xl border border-burgundy/15 hover:border-burgundy transition shadow-sm p-6 flex flex-col md:flex-row md:items-start md:space-x-6" data-category="chapter">
+                <div class="flex-shrink-0 mb-3 md:mb-0">
+                    <span class="font-serif text-2xl font-bold text-burgundy">2021</span>
+                </div>
+                <div class="flex-1 space-y-2">
+                    <span class="inline-block text-[10px] uppercase tracking-wider font-bold text-burgundy bg-burgundy-soft px-2 py-0.5 rounded">Book Chapter</span>
+                    <h3 class="font-serif font-semibold text-lg text-charcoal leading-snug">La restitution des biens culturels africains, et après ? L'État congolais et l'urgence d'une politique de réappropriation du patrimoine culturel</h3>
+                    <p class="text-sm text-charcoal/70 italic">Lwanzo Kasongo, G. (2021). In Baraka Akilimali, J. &amp; Makunya Muhindo, T. (eds.), <em>L'État en Afrique et la crise postcoloniale</em>. Paris: L'Harmattan.</p>
+                </div>
+            </article>
+
+            <!-- 2021 SSRN -->
+            <article class="pub-item bg-cream-card rounded-2xl border border-burgundy/15 hover:border-burgundy transition shadow-sm p-6 flex flex-col md:flex-row md:items-start md:space-x-6" data-category="conference">
+                <div class="flex-shrink-0 mb-3 md:mb-0">
+                    <span class="font-serif text-2xl font-bold text-burgundy">2021</span>
+                </div>
+                <div class="flex-1 space-y-2">
+                    <span class="inline-block text-[10px] uppercase tracking-wider font-bold text-burgundy bg-burgundy-soft px-2 py-0.5 rounded">Working Paper</span>
+                    <h3 class="font-serif font-semibold text-lg text-charcoal leading-snug">The Right to the Truth in the Process of Reconciliation in DR Congo: A Look at a Failed Historical Appointment</h3>
+                    <p class="text-sm text-charcoal/70 italic">Lwanzo Kasongo, G. (2021). <em>SSRN Electronic Journal</em>.</p>
+                    <a href="https://doi.org/10.2139/ssrn.3852399" target="_blank" rel="noopener" class="inline-flex items-center text-xs font-semibold text-burgundy hover:text-burgundy-dark transition">
+                        <i data-feather="external-link" class="w-3.5 h-3.5 mr-1"></i> DOI: 10.2139/ssrn.3852399
+                    </a>
+                </div>
+            </article>
+
+            <!-- 2020 AFD -->
+            <article class="pub-item bg-cream-card rounded-2xl border border-burgundy/15 hover:border-burgundy transition shadow-sm p-6 flex flex-col md:flex-row md:items-start md:space-x-6" data-category="journal">
+                <div class="flex-shrink-0 mb-3 md:mb-0">
+                    <span class="font-serif text-2xl font-bold text-burgundy">2020</span>
+                </div>
+                <div class="flex-1 space-y-2">
+                    <span class="inline-block text-[10px] uppercase tracking-wider font-bold text-burgundy bg-burgundy-soft px-2 py-0.5 rounded">Journal Article</span>
+                    <h3 class="font-serif font-semibold text-lg text-charcoal leading-snug">The Right to the Truth in the Reconciliation Process in DR Congo: A Look at a Missed Historical Appointment</h3>
+                    <p class="text-sm text-charcoal/70 italic">Lwanzo Kasongo, G. (2020). <em>AFD-ULPGL</em>, n°3, pp. 73–101.</p>
+                </div>
+            </article>
+
+            <!-- 2020 Master -->
+            <article class="pub-item bg-cream-card rounded-2xl border border-burgundy/15 hover:border-burgundy transition shadow-sm p-6 flex flex-col md:flex-row md:items-start md:space-x-6" data-category="thesis">
+                <div class="flex-shrink-0 mb-3 md:mb-0">
+                    <span class="font-serif text-2xl font-bold text-burgundy">2020</span>
+                </div>
+                <div class="flex-1 space-y-2">
+                    <span class="inline-block text-[10px] uppercase tracking-wider font-bold text-navy bg-slate-200 px-2 py-0.5 rounded">Thesis</span>
+                    <h3 class="font-serif font-semibold text-lg text-charcoal leading-snug">The Role of the African Union in the Migration Crisis in the Mediterranean: What Responsibilities for the African Union?</h3>
+                    <p class="text-sm text-charcoal/70 italic">Lwanzo Kasongo, G. (2020). Master's dissertation, International Humanitarian Action, UCLouvain, 2019–2020.</p>
+                </div>
+            </article>
+
+            <!-- 2018 Thesis -->
+            <article class="pub-item bg-cream-card rounded-2xl border border-burgundy/15 hover:border-burgundy transition shadow-sm p-6 flex flex-col md:flex-row md:items-start md:space-x-6" data-category="thesis">
+                <div class="flex-shrink-0 mb-3 md:mb-0">
+                    <span class="font-serif text-2xl font-bold text-burgundy">2018</span>
+                </div>
+                <div class="flex-1 space-y-2">
+                    <span class="inline-block text-[10px] uppercase tracking-wider font-bold text-navy bg-slate-200 px-2 py-0.5 rounded">Thesis</span>
+                    <h3 class="font-serif font-semibold text-lg text-charcoal leading-snug">Le Jus post bellum en droit international contemporain</h3>
+                    <p class="text-sm text-charcoal/70 italic">Lwanzo Kasongo, G. (2018). Mémoire de Licence en Droit, University of Goma (UNIGOM), DRC.</p>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- CONFERENCE PRESENTATIONS -->
+        <section class="pt-8 border-t border-burgundy/10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
+                <div class="lg:col-span-3">
+                    <div class="flex items-center space-x-3 text-burgundy">
+                        <span class="font-serif text-3xl font-light">A</span>
+                        <div class="h-px bg-burgundy/30 flex-grow"></div>
+                    </div>
+                    <h2 class="font-serif text-3xl font-bold text-charcoal mt-2 leading-snug">Conference<br/>Presentations</h2>
+                </div>
+                <div class="lg:col-span-9">
+                    <p class="text-charcoal/80 text-base max-w-2xl">
+                        Selected papers, panels, and keynote presentations delivered at international academic conferences across Europe, the United States, and Africa.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+                <!-- Europe -->
+                <div class="bg-cream-card p-6 rounded-2xl border border-burgundy/15 shadow-sm space-y-4">
+                    <div class="flex items-center space-x-2 text-burgundy border-b border-burgundy/10 pb-3">
+                        <i data-feather="globe" class="w-5 h-5"></i>
+                        <h3 class="font-serif font-bold text-lg">Europe</h3>
+                    </div>
+                    <ul class="space-y-3 text-sm text-charcoal/80">
+                        <li class="pb-3 border-b border-burgundy/5">
+                            <p class="font-semibold text-charcoal">VAD Conference — Basel, Switzerland <span class="text-burgundy font-normal">(2026)</span></p>
+                            <p class="text-xs text-charcoal/65 mt-0.5">Co-convenor, Panel P.4.05: <em>Restitution, Sovereignty and Geostrategic Realignments</em>.</p>
+                        </li>
+                        <li class="pb-3 border-b border-burgundy/5">
+                            <p class="font-semibold text-charcoal">Cambridge Heritage Research Centre — UK <span class="text-burgundy font-normal">(2024)</span></p>
+                            <p class="text-xs text-charcoal/65 mt-0.5">Panelist: <em>Navigating the Complexities of Cultural Heritage Restitution</em>.</p>
+                        </li>
+                        <li class="pb-3 border-b border-burgundy/5">
+                            <p class="font-semibold text-charcoal">Leiden University — Netherlands <span class="text-burgundy font-normal">(2023)</span></p>
+                            <p class="text-xs text-charcoal/65 mt-0.5">Symposium: <em>Confronting Colonial Objects: Charting a Cultural Relational Justice</em>.</p>
+                        </li>
+                        <li class="pb-3 border-b border-burgundy/5">
+                            <p class="font-semibold text-charcoal">ECAS — University of Cologne, Germany <span class="text-burgundy font-normal">(2023)</span></p>
+                            <p class="text-xs text-charcoal/65 mt-0.5">Chair, panel <em>Negotiating the Future: Decolonizing African Judicial System</em>; panelist, <em>Breaking the Ice: Restitution and Museum Struggles in Belgium and DR Congo</em>.</p>
+                        </li>
+                        <li class="pb-3 border-b border-burgundy/5">
+                            <p class="font-semibold text-charcoal">Max Planck Institute — Halle, Germany <span class="text-burgundy font-normal">(2023)</span></p>
+                            <p class="text-xs text-charcoal/65 mt-0.5">Workshop: <em>Colonialism and Transgenerational Memory in Europe</em>.</p>
+                        </li>
+                        <li class="pb-3 border-b border-burgundy/5">
+                            <p class="font-semibold text-charcoal">VAD &amp; ACT — Freiburg, Germany <span class="text-burgundy font-normal">(2022)</span></p>
+                            <p class="text-xs text-charcoal/65 mt-0.5">Speaker &amp; debater: <em>Africa–Europe: Reciprocal Perspective</em>.</p>
+                        </li>
+                        <li class="pb-3 border-b border-burgundy/5">
+                            <p class="font-semibold text-charcoal">German Lost Art Foundation — Germany <span class="text-burgundy font-normal">(2021)</span></p>
+                            <p class="text-xs text-charcoal/65 mt-0.5">Panelist: <em>The Long History of Claims for the Return of Cultural Heritage from Colonial Contexts</em>.</p>
+                        </li>
+                        <li>
+                            <p class="font-semibold text-charcoal">Vrije Universiteit Brussel — Belgium <span class="text-burgundy font-normal">(2023)</span></p>
+                            <p class="text-xs text-charcoal/65 mt-0.5">Chair &amp; coordinator, panel <em>Voices from the Margins</em>.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Americas & Africa -->
+                <div class="space-y-5">
+                    <div class="bg-cream-card p-6 rounded-2xl border border-burgundy/15 shadow-sm space-y-4">
+                        <div class="flex items-center space-x-2 text-burgundy border-b border-burgundy/10 pb-3">
+                            <i data-feather="map" class="w-5 h-5"></i>
+                            <h3 class="font-serif font-bold text-lg">United States</h3>
+                        </div>
+                        <ul class="space-y-3 text-sm text-charcoal/80">
+                            <li class="pb-3 border-b border-burgundy/5">
+                                <p class="font-semibold text-charcoal">New York — Museum Heritage Conservation <span class="text-burgundy font-normal">(Oct 2023)</span></p>
+                                <p class="text-xs text-charcoal/65 mt-0.5"><em>From Stalemate to Progress: Navigating the Restitution Maze in Belgium and DR Congo</em>.</p>
+                            </li>
+                            <li>
+                                <p class="font-semibold text-charcoal">University of Pennsylvania <span class="text-burgundy font-normal">(Jun 2022)</span></p>
+                                <p class="text-xs text-charcoal/65 mt-0.5"><em>Belgo-Congolese Identity and Intersectionality: Exploring the Complexities of Identity Formation in the Diaspora</em>.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-cream-card p-6 rounded-2xl border border-burgundy/15 shadow-sm space-y-4">
+                        <div class="flex items-center space-x-2 text-burgundy border-b border-burgundy/10 pb-3">
+                            <i data-feather="compass" class="w-5 h-5"></i>
+                            <h3 class="font-serif font-bold text-lg">Africa</h3>
+                        </div>
+                        <ul class="space-y-3 text-sm text-charcoal/80">
+                            <li class="pb-3 border-b border-burgundy/5">
+                                <p class="font-semibold text-charcoal">CITAA Conference — Morocco</p>
+                                <p class="text-xs text-charcoal/65 mt-0.5"><em>Building an Afrocolonialism: Reimagining Congolese Cultural Heritage in Contemporary Architecture and Art</em>.</p>
+                            </li>
+                            <li>
+                                <p class="font-semibold text-charcoal">Lubumbashi, DR Congo</p>
+                                <p class="text-xs text-charcoal/65 mt-0.5"><em>Meaning and Resignification of Museums in Congo: A Narrative of Congolese Actors on Cultural Heritage Management</em>.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- INVITED LECTURES -->
+        <section class="pt-8 border-t border-burgundy/10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
+                <div class="lg:col-span-3">
+                    <div class="flex items-center space-x-3 text-burgundy">
+                        <span class="font-serif text-3xl font-light">B</span>
+                        <div class="h-px bg-burgundy/30 flex-grow"></div>
+                    </div>
+                    <h2 class="font-serif text-3xl font-bold text-charcoal mt-2 leading-snug">Invited Expert<br/>Lectures</h2>
+                </div>
+                <div class="lg:col-span-9">
+                    <p class="text-charcoal/80 text-base max-w-2xl">
+                        Invitations to address academic, institutional, and public audiences on restitution, decolonization, and transitional justice.
+                    </p>
+                </div>
+            </div>
+
+            <div class="relative border-l-2 border-burgundy/20 ml-4 lg:ml-8 space-y-8">
+                <div class="relative pl-8">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-burgundy border-4 border-cream"></div>
+                    <div class="bg-cream-card p-6 rounded-2xl border border-burgundy/10 shadow-sm space-y-1">
+                        <span class="inline-block text-xs font-bold text-burgundy bg-burgundy-soft px-2.5 py-0.5 rounded-full">2025</span>
+                        <h3 class="font-serif font-bold text-lg text-charcoal">Belgian Senate — Brussels</h3>
+                        <p class="text-sm text-charcoal/70 italic">"Freeing Minds, Healing Memories: Restitution as an Act of Reparation for Transgenerational Memory," 24 November 2025.</p>
+                    </div>
+                </div>
+                <div class="relative pl-8">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-burgundy/70 border-4 border-cream"></div>
+                    <div class="bg-cream-card p-6 rounded-2xl border border-burgundy/10 shadow-sm space-y-1">
+                        <span class="inline-block text-xs font-bold text-burgundy bg-burgundy-soft px-2.5 py-0.5 rounded-full">2023</span>
+                        <h3 class="font-serif font-bold text-lg text-charcoal">KU Leuven — Belgium</h3>
+                        <p class="text-sm text-charcoal/70 italic">Invited discussant: "How to Decolonize Public Space," at the invitation of Prof. Andreas Stynen.</p>
+                    </div>
+                </div>
+                <div class="relative pl-8">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-burgundy/60 border-4 border-cream"></div>
+                    <div class="bg-cream-card p-6 rounded-2xl border border-burgundy/10 shadow-sm space-y-1">
+                        <span class="inline-block text-xs font-bold text-burgundy bg-burgundy-soft px-2.5 py-0.5 rounded-full">2023</span>
+                        <h3 class="font-serif font-bold text-lg text-charcoal">ISPOLE Research Day — UCLouvain</h3>
+                        <p class="text-sm text-charcoal/70 italic">"From Restitution to Restitutions: A Holistic Approach to the Restitution of Cultural Heritage, Human Remains and Colonial Archives," 30 May 2023.</p>
+                    </div>
+                </div>
+                <div class="relative pl-8">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-burgundy/50 border-4 border-cream"></div>
+                    <div class="bg-cream-card p-6 rounded-2xl border border-burgundy/10 shadow-sm space-y-1">
+                        <span class="inline-block text-xs font-bold text-burgundy bg-burgundy-soft px-2.5 py-0.5 rounded-full">2022</span>
+                        <h3 class="font-serif font-bold text-lg text-charcoal">Ghent University — Belgium</h3>
+                        <p class="text-sm text-charcoal/70 italic">Invited lecture in the course "Multiculturalism and the Law" (Prof. Catherine Van de Graaf): "How to Decolonise through Restitution? A Typology of Negotiation Based on Empirical Data."</p>
+                    </div>
+                </div>
+                <div class="relative pl-8">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-burgundy/40 border-4 border-cream"></div>
+                    <div class="bg-cream-card p-6 rounded-2xl border border-burgundy/10 shadow-sm space-y-1">
+                        <span class="inline-block text-xs font-bold text-burgundy bg-burgundy-soft px-2.5 py-0.5 rounded-full">2022</span>
+                        <h3 class="font-serif font-bold text-lg text-charcoal">Festival of Freedoms — Brussels</h3>
+                        <p class="text-sm text-charcoal/70 italic">Public interview with Dr. Gabor Tverdota: "Racism, Colonialism, Reparation," National Theatre, Brussels.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT CTA -->
+        <section id="contact" class="bg-burgundy text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+            <div class="absolute -right-10 -bottom-10 w-48 h-48 opacity-10 dot-pattern pointer-events-none"></div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-7 space-y-4">
+                    <div class="flex items-center space-x-3 text-amber-300">
+                        <span class="font-serif text-3xl font-light">06</span>
+                        <div class="h-px bg-amber-300/40 flex-grow"></div>
+                    </div>
+                    <h2 class="font-serif text-3xl font-bold tracking-wide">Collaborate on Research</h2>
+                    <p class="text-white/80 text-sm max-w-lg">
+                        I welcome inquiries regarding joint publications, academic exchanges, conference panels, and humanitarian policy discussions.
+                    </p>
+                </div>
+                <div class="lg:col-span-5 flex flex-col sm:flex-row gap-3">
+                    <a href="mailto:gracia.lwanzo@uclouvain.be" class="inline-flex items-center justify-center space-x-2 bg-amber-400 text-navy px-6 py-3 rounded-full font-semibold hover:bg-amber-300 transition">
+                        <i data-feather="mail" class="w-4 h-4"></i>
+                        <span>Email Me</span>
+                    </a>
+                    <a href="index.html" class="inline-flex items-center justify-center space-x-2 border-2 border-white/40 text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition">
+                        <i data-feather="arrow-left" class="w-4 h-4"></i>
+                        <span>Back Home</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-burgundy/10 py-8 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-xs text-muted space-y-4 sm:space-y-0">
+            <p>© 2026 Gracia Lwanzo Kasongo. All rights reserved.</p>
+            <p class="font-serif italic">Academic Portfolio — Publications</p>
+        </div>
+    </footer>
+
+    <script>
+        feather.replace();
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const pubItems = document.querySelectorAll('.pub-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-burgundy', 'text-white', 'shadow-sm');
+                    b.classList.add('bg-cream-card', 'text-charcoal/70', 'border', 'border-burgundy/10');
+                });
+                btn.classList.add('active', 'bg-burgundy', 'text-white', 'shadow-sm');
+                btn.classList.remove('bg-cream-card', 'text-charcoal/70', 'border', 'border-burgundy/10');
+
+                const filter = btn.dataset.filter;
+                pubItems.forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

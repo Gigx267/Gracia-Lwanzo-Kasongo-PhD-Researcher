@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Doctoral research by Gracia Lwanzo Kasongo — international humanitarian law, humanitarian governance, and political practice in conflict-affected regions.">
+    <meta name="theme-color" content="#6B1D2F">
+    <title>Research — Gracia Lwanzo Kasongo</title>
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%236B1D2F%22/><text x=%2250%22 y=%2268%22 font-family=%22Georgia%22 font-size=%2248%22 fill=%22%23f8f6f0%22 text-anchor=%22middle%22>G</text></svg>">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: {
+                            DEFAULT: '#f8f6f0',
+                            card: '#f2eee3',
+                            hover: '#eae4d3',
+                        },
+                        burgundy: {
+                            DEFAULT: '#6B1D2F',
+                            dark: '#4d1220',
+                            light: '#8b273e',
+                            soft: '#f3e8eb',
+                        },
+                        navy: {
+                            DEFAULT: '#1a2836',
+                            light: '#25384b',
+                        },
+                        charcoal: '#222222',
+                        muted: '#666666'
+                    },
+                    fontFamily: {
+                        serif: ['Newsreader', 'Georgia', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                        cinzel: ['Cinzel', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .dot-pattern {
+            background-image: radial-gradient(#6B1D2F 1.5px, transparent 1.5px);
+            background-size: 14px 14px;
+            opacity: 0.25;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f8f6f0; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #6B1D2F; border-radius: 3px; }
+
+        /* Anchored sections clear the sticky header */
+        section[id] { scroll-margin-top: 6rem; }
+
+        /* Gentle reveal — content stays visible if JS fails */
+        .reveal { opacity: 1; }
+        @media (prefers-reduced-motion: no-preference) {
+            .reveal {
+                opacity: 0;
+                transform: translateY(18px);
+                transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1);
+            }
+            .reveal.active { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Underline for the active nav item */
+        .nav-current { position: relative; color: #6B1D2F; }
+        .nav-current::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; bottom: -6px;
+            height: 2px;
+            background: #6B1D2F;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+
+<body class="bg-cream text-charcoal font-sans antialiased leading-relaxed selection:bg-burgundy selection:text-white">
+
+    <!-- SKIP LINK -->
+    <a href="#main"
+       class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-burgundy focus:px-5 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-white">
+        Skip to content
+    </a>
+
+    <!-- NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-cream/90 backdrop-blur-md border-b border-burgundy/10 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="group flex items-center space-x-2">
+                <span class="font-serif font-semibold text-xl sm:text-2xl tracking-tight text-burgundy group-hover:text-burgundy-dark transition">G. Lwanzo Kasongo</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav aria-label="Main navigation" class="hidden md:flex items-center space-x-8 text-sm font-medium text-charcoal/80">
+                <a href="about.html" class="hover:text-burgundy transition">About</a>
+                <a href="research.html" aria-current="page" class="nav-current transition">Research</a>
+                <a href="Education.html" class="hover:text-burgundy transition">Education</a>
+                <a href="publications.html" class="hover:text-burgundy transition">Publications</a>
+                <a href="skills.html" class="hover:text-burgundy transition">Skills</a>
+                <a href="contact.html" class="bg-burgundy text-white px-5 py-2.5 rounded-full hover:bg-burgundy-dark transition shadow-sm font-semibold tracking-wide">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn"
+                    class="md:hidden p-2 text-burgundy focus:outline-none focus-visible:ring-2 focus-visible:ring-burgundy focus-visible:ring-offset-2 focus-visible:ring-offset-cream rounded-lg"
+                    aria-label="Toggle navigation menu"
+                    aria-controls="mobile-menu"
+                    aria-expanded="false">
+                <i data-feather="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cream border-b border-burgundy/10 px-6 py-6 space-y-4 shadow-lg">
+            <a href="about.html" class="block text-base font-medium text-charcoal hover:text-burgundy">About</a>
+            <a href="research.html" aria-current="page" class="block text-base font-semibold text-burgundy">Research</a>
+            <a href="Education.html" class="block text-base font-medium text-charcoal hover:text-burgundy">Education</a>
+            <a href="publications.html" class="block text-base font-medium text-charcoal hover:text-burgundy">Publications</a>
+            <a href="skills.html" class="block text-base font-medium text-charcoal hover:text-burgundy">Skills</a>
+            <a href="contact.html" class="block text-center bg-burgundy text-white px-5 py-3 rounded-xl font-semibold">Contact Me</a>
+        </div>
+    </header>
+
+    <main id="main" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-24">
+
+        <!-- ───────────────────────── HERO ───────────────────────── -->
+        <section class="relative pt-6 pb-4 overflow-hidden" aria-labelledby="research-hero-heading">
+            <div class="absolute top-0 right-0 w-32 h-32 dot-pattern pointer-events-none"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+                <!-- Left: intro -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 bg-burgundy-soft text-burgundy px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
+                        <i data-feather="compass" class="w-3.5 h-3.5"></i>
+                        <span>Doctoral Research</span>
+                    </div>
+
+                    <div class="space-y-3">
+                        <h1 id="research-hero-heading" class="font-serif text-5xl sm:text-6xl font-normal text-charcoal tracking-tight leading-tight">
+                            Research <br/>
+                            <span class="font-semibold text-burgundy">Overview</span>
+                        </h1>
+                        <p class="text-charcoal/80 text-base max-w-2xl leading-relaxed">
+                            My doctoral work examines how international legal norms travel into humanitarian practice —
+                            and where they stall — in conflict-affected regions. I combine legal analysis with
+                            qualitative fieldwork to study the governance of protection in the eastern Democratic
+                            Republic of the Congo and its cross-border humanitarian economy.
+                        </p>
+                    </div>
+
+                    <!-- Quick anchors -->
+                    <nav aria-label="On this page" class="flex flex-wrap gap-2 pt-2">
+                        <a href="#overview" class="inline-flex items-center gap-1.5 rounded-full border border-burgundy/25 bg-cream-card px-4 py-2 text-xs font-semibold text-burgundy hover:bg-burgundy hover:text-white transition">
+                            <i data-feather="layers" class="w-3.5 h-3.5"></i> Project
+                        </a>
+                        <a href="#questions" class="inline-flex items-center gap-1.5 rounded-full border border-burgundy/25 bg-cream-card px-4 py-2 text-xs font-semibold text-burgundy hover:bg-burgundy hover:text-white transition">
+                            <i data-feather="help-circle" class="w-3.5 h-3.5"></i> Questions
+                        </a>
+                        <a href="#themes" class="inline-flex items-center gap-1.5 rounded-full border border-burgundy/25 bg-cream-card px-4 py-2 text-xs font-semibold text-burgundy hover:bg-burgundy hover:text-white transition">
+                            <i data-feather="grid" class="w-3.5 h-3.5"></i> Themes
+                        </a>
+                        <a href="#methodology" class="inline-flex items-center gap-1.5 rounded-full border border-burgundy/25 bg-cream-card px-4 py-2 text-xs font-semibold text-burgundy hover:bg-burgundy hover:text-white transition">
+                            <i data-feather="tool" class="w-3.5 h-3.5"></i> Methodology
+                        </a>
+                        <a href="#fieldwork" class="inline-flex items-center gap-1.5 rounded-full border border-burgundy/25 bg-cream-card px-4 py-2 text-xs font-semibold text-burgundy hover:bg-burgundy hover:text-white transition">
+                            <i data-feather="map-pin" class="w-3.5 h-3.5"></i> Fieldwork
+                        </a>
+                        <a href="#outputs" class="inline-flex items-center gap-1.5 rounded-full border border-burgundy/25 bg-cream-card px-4 py-2 text-xs font-semibold text-burgundy hover:bg-burgundy hover:text-white transition">
+                            <i data-feather="book-open" class="w-3.5 h-3.5"></i> Outputs
+                        </a>
+                    </nav>
+                </div>
+
+                <!-- Right: research snapshot card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-2 rounded-3xl bg-burgundy/10 transform -rotate-2"></div>
+
+                        <div class="relative rounded-2xl overflow-hidden shadow-xl bg-cream-card border border-burgundy/10">
+                            <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=800"
+                                 alt="Research library shelves, representing legal and policy scholarship"
+                                 width="800" height="420"
+                                 class="w-full h-44 object-cover">
+                            <div class="p-6 space-y-4">
+                                <p class="font-display uppercase tracking-[0.2em] text-[10px] text-burgundy font-semibold">Doctoral Project</p>
+                                <h2 class="font-serif text-xl font-bold text-charcoal leading-snug">
+                                    Legal Norms and Humanitarian Practice: Governing Protection in Eastern DRC
+                                </h2>
+
+                                <dl class="grid grid-cols-2 gap-4 text-xs pt-2 border-t border-burgundy/10">
+                                    <div>
+                                        <dt class="uppercase font-semibold text-muted text-[10px] tracking-wider">Status</dt>
+                                        <dd class="font-medium text-charcoal mt-0.5">In progress · 2020–2025</dd>
+                                    </div>
+                                    <div>
+                                        <dt class="uppercase font-semibold text-muted text-[10px] tracking-wider">Discipline</dt>
+                                        <dd class="font-medium text-charcoal mt-0.5">Political Science & IR</dd>
+                                    </div>
+                                    <div>
+                                        <dt class="uppercase font-semibold text-muted text-[10px] tracking-wider">Institution</dt>
+                                        <dd class="font-medium text-charcoal mt-0.5">UCLouvain, Belgium</dd>
+                                    </div>
+                                    <div>
+                                        <dt class="uppercase font-semibold text-muted text-[10px] tracking-wider">Approach</dt>
+                                        <dd class="font-medium text-charcoal mt-0.5">Qualitative & doctrinal</dd>
+                                    </div>
+                                </dl>
+
+                                <div class="pt-2 border-t border-burgundy/10">
+                                    <p class="text-[10px] uppercase font-semibold text-muted tracking-wider mb-2">Keywords</p>
+                                    <ul class="flex flex-wrap gap-1.5">
+                                        <li class="rounded-full bg-burgundy-soft text-burgundy text-[10px] font-semibold px-2.5 py-1">IHL</li>
+                                        <li class="rounded-full bg-burgundy-soft text-burgundy text-[10px] font-semibold px-2.5 py-1">Protection</li>
+                                        <li class="rounded-full bg-burgundy-soft text-burgundy text-[10px] font-semibold px-2.5 py-1">Governance</li>
+                                        <li class="rounded-full bg-burgundy-soft text-burgundy text-[10px] font-semibold px-2.5 py-1">DRC</li>
+                                        <li class="rounded-full bg-burgundy-soft text-burgundy text-[10px] font-semibold px-2.5 py-1">Great Lakes</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ───────────────────── 01 · PROJECT OVERVIEW ───────────────────── -->
+        <section id="overview" class="pt-8 border-t border-burgundy/10 reveal" aria-labelledby="overview-heading">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+                <div class="lg:col-span-3">
+                    <div class="flex items-center space-x-3 text-burgundy">
+                        <span class="font-serif text-3xl font-light">01</span>
+                        <div class="h-px bg-burgundy/30 flex-grow"></div>
+                    </div>
+                    <h2 id="overview-heading" class="font-serif text-3xl font-bold text-charcoal mt-2">The Project</h2>
+                    <p class="font-display tracking-wider uppercase text-xs text-burgundy font-semibold mt-1">Scope & Contribution</p>
+                </div>
+
+                <div class="lg:col-span-9 grid grid-cols-1 md:grid-cols-12 gap-8">
+                    <div class="md:col-span-7 space-y-4 text-charcoal/85">
+                        <p class="text-base leading-relaxed">
+                            International humanitarian law sets out clear obligations to protect civilians in armed conflict.
+                            Yet in eastern DRC — one of the world's longest-running and most complex humanitarian theatres —
+                            the gap between legal obligation and lived protection remains wide.
+                        </p>
+                        <p class="text-base leading-relaxed">
+                            This doctoral project asks <em class="font-serif italic">why</em>. It traces how international legal norms are
+                            interpreted, negotiated, and operationalised by humanitarian actors, state institutions, and
+                            affected communities, and what that means for the design of protection policy.
+                        </p>
+                        <p class="text-base leading-relaxed">
+                            The contribution is twofold: an empirically grounded account of humanitarian governance in the
+                            Great Lakes region, and a conceptual argument about how law functions as a <strong>practice</strong> —
+                            not merely a text — within humanitarian response.
+                        </p>
+
+                        <div class="mt-6 p-4 bg-burgundy-soft/50 rounded-xl border border-burgundy/10 flex items-start space-x-3">
+                            <div class="p-2 bg-burgundy text-white rounded-lg flex-shrink-0">
+                                <i data-feather="target" class="w-5 h-5"></i>
+                            </div>
+                            <p class="text-sm text-burgundy-dark font-medium leading-relaxed">
+                                Central claim: legal protection frameworks succeed or fail in the translation —
+                                between Geneva and Goma, between doctrine and decision.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Contribution card -->
+                    <aside class="md:col-span-5 bg-cream-card p-6 rounded-2xl border border-burgundy/15 shadow-sm space-y-4">
+                        <h3 class="font-serif font-bold text-lg text-burgundy border-b border-burgundy/10 pb-2">Expected Contribution</h3>
+                        <ul class="space-y-3 text-sm text-charcoal/85">
+                            <li class="flex items-start gap-3">
+                                <i data-feather="check-circle" class="w-4 h-4 text-burgundy mt-0.5 flex-shrink-0"></i>
+                                <span><strong class="font-semibold">Empirical:</strong> first-hand accounts of protection coordination across DRC and its borders.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-feather="check-circle" class="w-4 h-4 text-burgundy mt-0.5 flex-shrink-0"></i>
+                                <span><strong class="font-semibold">Conceptual:</strong> a practice-based model of legal norm translation in humanitarian settings.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-feather="check-circle" class="w-4 h-4 text-burgundy mt-0.5 flex-shrink-0"></i>
+                                <span><strong class="font-semibold">Policy:</strong> practical recommendations for protection programming and coordination.</span>
+                            </li>
+                        </ul>
+
+                        <div class="mt-4 pt-4 border-t border-burgundy/10 flex items-center gap-2 text-xs text-charcoal/70">
+                            <i data-feather="clock" class="w-4 h-4 text-burgundy"></i>
+                            <span>Doctoral thesis · UCLouvain · expected completion 2025</span>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- ───────────────────── 02 · RESEARCH QUESTIONS ───────────────────── -->
+        <section id="questions" class="pt-8 border-t border-burgundy/10 reveal" aria-labelledby="questions-heading">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10">
+                <div class="lg:col-span-3">
+                    <div class="flex items-center space-x-3 text-burgundy">
+                        <span class="font-serif text-3xl font-light">02</span>
+                        <div class="h-px bg-burgundy/30 flex-grow"></div>
+                    </div>
+                    <h2 id="questions-heading" class="font-serif text-3xl font-bold text-charcoal mt-2">Core Questions</h2>
+                </div>
+                <div class="lg:col-span-9">
+                    <p class="text-charcoal/80 max-w-2xl text-base leading-relaxed">
+                        Four interlocking questions organise the doctoral inquiry, moving from law to practice to policy.
+                    </p>
+                </div>
+            </div>
+
+            <ol class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <li class="bg-cream-card rounded-2xl p-6 border border-burgundy/15 shadow-sm flex gap-4">
+                    <span class="font-serif text-3xl font-light text-burgundy/40 leading-none flex-shrink-0">Q1</span>
+                    <p class="text-sm text-charcoal/85 leading-relaxed">
+                        How are international humanitarian law obligations interpreted by actors operating in
+                        eastern DRC, and which norms are treated as actionable in daily practice?
+                    </p>
+                </li>
+                <li class="bg-cream-card rounded-2xl p-6 border border-burgundy/15 shadow-sm flex gap-4">
+                    <span class="font-serif text-3xl font-light text-burgundy/40 leading-none flex-shrink-0">Q2</span>
+                    <p class="text-sm text-charcoal/85 leading-relaxed">
+                        What governance arrangements — coordination mechanisms, mandates, funding structures —
+                        shape who is protected, where, and by whom?
+                    </p>
+                </li>
+                <li class="bg-cream-card rounded-2xl p-6 border border-burgundy/15 shadow-sm flex gap-4">
+                    <span class="font-serif text-3xl font-light text-burgundy/40 leading-none flex-shrink-0">Q3</span>
+                    <p class="text-sm text-charcoal/85 leading-relaxed">
+                        Where and why does the translation from legal norm to protection outcome break down,
+                        and what strategies do practitioners use to bridge the gap?
+                    </p>
+                </li>
+                <li class="bg-cream-card rounded-2xl p-6 border border-burgundy/15 shadow-sm flex gap-4">
+                    <span class="font-serif text-3xl font-light text-burgundy/40 leading-none flex-shrink-0">Q4</span>
+                    <p class="text-sm text-charcoal/85 leading-relaxed">
+                        What can comparative and contextual evidence from the Great Lakes contribute to
+                        broader debates on humanitarian governance and legal accountability?
+                    </p>
+                </li>
+            </ol>
+        </section>
+
+        <!-- ───────────────────── 03 · RESEARCH THEMES ───────────────────── -->
+        <section id="themes" class="pt-8 border-t border-burgundy/10 reveal" aria-labelledby="themes-heading">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
+                <div class="lg:col-span-3">
+                    <div class="flex items-center space-x-3 text-burgundy">
+                        <span class="font-serif text-3xl font-light">03</span>
+                        <div class="h-px bg-burgundy/30 flex-grow"></div>
+                    </div>
+                    <h2 id="themes-heading" class="font-serif text-3xl font-bold text-charcoal mt-2">Research Themes</h2>
+                </div>
+                <div class="lg:col-span-9">
+                    <p class="text-charcoal/80 max-w-2xl text-base leading-relaxed">
+                        The project sits at the intersection of law, governance, and conflict — with a regional anchor in Central Africa.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Theme 1 -->
+                <article class="bg-cream-card rounded-2xl p-6 border border-burgundy/15 hover:border-burgundy transition shadow-sm flex flex-col group">
+                    <div class="w-12 h-12 rounded-full bg-burgundy/10 text-burgundy flex items-center justify-center mb-4 group-hover:bg-burgundy group-hover:text-white transition">
+                        <i data-feather="scale" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-lg text-charcoal mb-2">International Humanitarian Law</h3>
+                    <p class="text-sm text-charcoal/75 leading-relaxed flex-1">
+                        How legal norms — distinction, proportionality, precaution — are understood and applied by
+                        humanitarian and state actors in active conflict zones.
+                    </p>
+                </article>
+
+                <!-- Theme 2 -->
+                <article class="bg-cream-card rounded-2xl p-6 border border-burgundy/15 hover:border-burgundy transition shadow-sm flex flex-col group">
+                    <div class="w-12 h-12 rounded-full bg-burgundy/10 text-burgundy flex items-center justify-center mb-4 group-hover:bg-burgundy group-hover:text-white transition">
+                        <i data-feather="users" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-lg text-charcoal mb-2">Humanitarian Governance</h3>
+                    <p class="text-sm text-charcoal/75 leading-relaxed flex-1">
+                        Coordination architecture, mandates, and the political economy of aid — and how these
+                        determine protection priorities on the ground.
+                    </p>
+                </article>
+
+                <!-- Theme 3 — featured navy -->
+                <article class="bg-navy text-white rounded-2xl p-6 border border-navy hover:border-burgundy transition shadow-md flex flex-col group">
+                    <div class="w-12 h-12 rounded-full bg-white/10 text-amber-400 flex items-center justify-center mb-4 group-hover:bg-amber-400 group-hover:text-navy transition">
+                        <i data-feather="compass" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-lg text-white mb-2">Conflict & the Great Lakes</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed flex-1">
+                        Regional dynamics in eastern DRC and cross-border humanitarian flows — armed group
+                        governance, displacement, and access negotiation.
+                    </p>
+                    <span class="mt-4 inline-flex w-fit items-center gap-1 rounded-full bg-amber-400/15 text-amber-300 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1">
+                        <i data-feather="star" class="w-3 h-3"></i> Regional focus
+                    </span>
+                </article>
+
+                <!-- Theme 4 -->
+                <article class="bg-cream-card rounded-2xl p-6 border border-burgundy/15 hover:border-burgundy transition shadow-sm flex flex-col group">
+                    <div class="w-12 h-12 rounded-full bg-burgundy/10 text-burgundy flex items-center justify-center mb-4 group-hover:bg-burgundy group-hover:text-white transition">
+                        <i data-feather="award" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-lg text-charcoal mb-2">Law, Policy & Practice</h3>
+                    <p class="text-sm text-charcoal/75 leading-relaxed flex-1">
+                        How legal norms become policy instruments — and how evidence from the field can
+                        inform more effective protection frameworks.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ───────────────────── 04 · METHODOLOGY ───────────────────── -->
+        <section id="methodology" class="pt-8 border-t border-burgundy/10 reveal" aria-labelledby="methodology-heading">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+                <div class="lg:col-span-3">
+                    <div class="flex items-center space-x-3 text-burgundy">
+                        <span class="font-serif text-3xl font-light">04</span>
+                        <div class="h-px bg-burgundy/30 flex-grow"></div>
+                    </div>
+                    <h2 id="methodology-heading" class="font-serif text-3xl font-bold text-charcoal mt-2 leading-snug">Methodology</h2>
+                    <p class="font-display tracking-wider uppercase text-xs text-burgundy font-semibold mt-1">Mixed Qualitative Design</p>
+                </div>
+
+                <div class="lg:col-span-9 space-y-6">
+
+                    <!-- Method cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div class="bg-cream-card rounded-2xl p-5 border border-burgundy/15 shadow-sm">
+                            <div class="flex items-center gap-2 text-burgundy mb-2">
+                                <i data-feather="file-text" class="w-5 h-5"></i>
+                                <h3 class="font-serif font-bold text-base text-charcoal">Doctrinal Legal Analysis</h3>
+                            </div>
+                            <p class="text-sm text-charcoal/75 leading-relaxed">
+                                Close reading of treaty texts, customary norms, UN Security Council resolutions,
+                                and humanitarian policy instruments.
+                            </p>
+                        </div>
+
+                        <div class="bg-cream-card rounded-2xl p-5 border border-burgundy/15 shadow-sm">
+                            <div class="flex items-center gap-2 text-burgundy mb-2">
+                                <i data-feather="message-circle" class="w-5 h-5"></i>
+                                <h3 class="font-serif font-bold text-base text-charcoal">Semi-Structured Interviews</h3>
+                            </div>
+                            <p class="text-sm text-charcoal/75 leading-relaxed">
+                                Practitioners, policy actors, and community representatives — with informed consent
+                                and anonymisation protocols.
+                            </p>
+                        </div>
+
+                        <div class="bg-cream-card rounded-2xl p-5 border border-burgundy/15 shadow-sm">
+                            <div class="flex items-center gap-2 text-burgundy mb-2">
+                                <i data-feather="map" class="w-5 h-5"></i>
+                                <h3 class="font-serif font-bold text-base text-charcoal">Field Observation</h3>
+                            </div>
+                            <p class="text-sm text-charcoal/75 leading-relaxed">
+                                Contextual immersion in coordination meetings, field visits, and
+                                community-level protection structures.
+                            </p>
+                        </div>
+
+                        <div class="bg-cream-card rounded-2xl p-5 border border-burgundy/15 shadow-sm">
+                            <div class="flex items-center gap-2 text-burgundy mb-2">
+                                <i data-feather="layers" class="w-5 h-5"></i>
+                                <h3 class="font-serif font-bold text-base text-charcoal">Comparative Case Analysis</h3>
+                            </div>
+                            <p class="text-sm text-charcoal/75 leading-relaxed">
+                                Structured comparison across sites and response contexts to identify
+                                patterns and variation.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Ethics note -->
+                    <div class="rounded-2xl border border-burgundy/15 bg-cream-card p-6 flex items-start gap-4">
+                        <div class="p-2 bg-burgundy text-white rounded-lg flex-shrink-0">
+                            <i data-feather="shield" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif font-bold text-base text-charcoal mb-1">Research Ethics & Positionality</h3>
+                            <p class="text-sm text-charcoal/75 leading-relaxed">
+                                Fieldwork involving conflict-affected populations follows strict ethical review, do-no-harm
+                                principles, and data protection standards. My own background in eastern DRC informs
+                                access and interpretation, and is treated as an object of critical reflection rather than
+                                an unexamined advantage.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ───────────────────── 05 · FIELDWORK ───────────────────── -->
+        <section id="fieldwork" class="pt-8 border-t border-burgundy/10 reveal" aria-labelledby="fieldwork-heading">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
+                <div class="lg:col-span-3">
+                    <div class="flex items-center space-x-3 text-burgundy">
+                        <span class="font-serif text-3xl font-light">05</span>
+                        <div class="h-px bg-burgundy/30 flex-grow"></div>
+                    </div>
+                    <h2 id="fieldwork-heading" class="font-serif text-3xl font-bold text-charcoal mt-2">Fieldwork</h2>
+                </div>
+                <div class="lg:col-span-9">
+                    <p class="text-charcoal/80 max-w-2xl text-base leading-relaxed">
+                        Empirical work spans three settings: humanitarian operations in eastern DRC, cross-border
+                        response structures, and the European policy and academic community.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- Site 1 -->
+                <article class="bg-cream-card rounded-2xl overflow-hidden border border-burgundy/15 shadow-sm group">
+                    <div class="relative h-40 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&q=80&w=700"
+                             alt="Mountainous landscape representing the eastern DRC context"
+                             width="700" height="400" loading="lazy"
+                             class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/70 to-transparent"></div>
+                        <span class="absolute bottom-3 left-3 text-[11px] bg-charcoal/80 text-white px-2 py-0.5 rounded">Eastern DRC</span>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <h3 class="font-serif font-bold text-lg text-charcoal">North & South Kivu</h3>
+                        <p class="text-sm text-charcoal/75 leading-relaxed">
+                            Primary site. Interviews and observation with humanitarian actors, local authorities,
+                            and community protection structures.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Site 2 -->
+                <article class="bg-cream-card rounded-2xl overflow-hidden border border-burgundy/15 shadow-sm group">
+                    <div class="relative h-40 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=700"
+                             alt="Meeting table with documents representing coordination structures"
+                             width="700" height="400" loading="lazy"
+                             class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/70 to-transparent"></div>
+                        <span class="absolute bottom-3 left-3 text-[11px] bg-charcoal/80 text-white px-2 py-0.5 rounded">Cross-border</span>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <h3 class="font-serif font-bold text-lg text-charcoal">Regional Response Hubs</h3>
+                        <p class="text-sm text-charcoal/75 leading-relaxed">
+                            Coordination platforms and cross-border humanitarian structures serving displaced
+                            and host communities.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Site 3 -->
+                <article class="bg-cream-card rounded-2xl overflow-hidden border border-burgundy/15 shadow-sm group">
+                    <div class="relative h-40 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1568084680786-a84f91d1153c?auto=format&fit=crop&q=80&w=700"
+                             alt="Campus in Louvain-la-Neuve, Belgium"
+                             width="700" height="400" loading="lazy"
+                             class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/70 to-transparent"></div>
+                        <span class="absolute bottom-3 left-3 text-[11px] bg-charcoal/80 text-white px-2 py-0.5 rounded">Belgium</span>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <h3 class="font-serif font-bold text-lg text-charcoal">Policy & Academic Community</h3>
+                        <p class="text-sm text-charcoal/75 leading-relaxed">
+                            Interviews with EU-based policy actors, legal experts, and academic
+                            specialists in humanitarian governance.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ───────────────────── 06 · OUTPUTS & ENGAGEMENT ───────────────────── -->
+        <section id="outputs" class="pt-8 border-t border-burgundy/10 reveal" aria-labelledby="outputs-heading">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
+                <div class="lg:col-span-3">
+                    <div class="flex items-center space-x-3 text-burgundy">
+                        <span class="font-serif text-3xl font-light">06</span>
+                        <div class="h-px bg-burgundy/30 flex-grow"></div>
+                    </div>
+                    <h2 id="outputs-heading" class="font-serif text-3xl font-bold text-charcoal mt-2 leading-snug">Outputs & Engagement</h2>
+                </div>
+                <div class="lg:col-span-9">
+                    <p class="text-charcoal/80 max-w-2xl text-base leading-relaxed">
+                        Research is shared through peer-reviewed work, conference presentations, and policy-facing
+                        conversations.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+                <!-- Output list -->
+                <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-5">
+
+                    <div class="bg-cream-card p-6 rounded-2xl border border-burgundy/15 shadow-sm space-y-2">
+                        <div class="flex items-center gap-2">
+                            <i data-feather="file-text" class="w-5 h-5 text-burgundy"></i>
+                            <h3 class="font-serif font-bold text-lg text-charcoal">Journal Articles</h3>
+                            <span class="text-[10px] bg-amber-200 text-amber-900 font-bold px-2 py-0.5 rounded uppercase">Forthcoming</span>
+                        </div>
+                        <p class="text-sm text-charcoal/75 leading-relaxed">
+                            Peer-reviewed work on legal norm translation and protection practice in
+                            conflict-affected settings.
+                        </p>
+                    </div>
+
+                    <div class="bg-cream-card p-6 rounded-2xl border border-burgundy/15 shadow-sm space-y-2">
+                        <div class="flex items-center gap-2">
+                            <i data-feather="tv" class="w-5 h-5 text-burgundy"></i>
+                            <h3 class="font-serif font-bold text-lg text-charcoal">Conference Papers</h3>
+                            <span class="text-[10px] bg-amber-200 text-amber-900 font-bold px-2 py-0.5 rounded uppercase">Forthcoming</span>
+                        </div>
+                        <p class="text-sm text-charcoal/75 leading-relaxed">
+                            Presentations at academic conferences and workshops on humanitarian governance and IHL.
+                        </p>
+                    </div>
+
+                    <div class="bg-cream-card p-6 rounded-2xl border border-burgundy/15 shadow-sm space-y-2">
+                        <div class="flex items-center gap-2">
+                            <i data-feather="mic" class="w-5 h-5 text-burgundy"></i>
+                            <h3 class="font-serif font-bold text-lg text-charcoal">Invited Talks</h3>
+                        </div>
+                        <p class="text-sm text-charcoal/75 leading-relaxed">
+                            Seminars and panels connecting academic findings with humanitarian policy audiences.
+                        </p>
+                    </div>
+
+                    <div class="bg-cream-card p-6 rounded-2xl border border-burgundy/15 shadow-sm space-y-2">
+                        <div class="flex items-center gap-2">
+                            <i data-feather="users" class="w-5 h-5 text-burgundy"></i>
+                            <h3 class="font-serif font-bold text-lg text-charcoal">Teaching & Supervision</h3>
+                        </div>
+                        <p class="text-sm text-charcoal/75 leading-relaxed">
+                            Support for courses in international relations, humanitarian action, and research methods.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Link card -->
+                <aside class="lg:col-span-4 bg-navy text-white rounded-2xl p-7 shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-white/10 text-amber-400 flex items-center justify-center mb-4">
+                            <i data-feather="book-open" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl mb-2">Full Publication Record</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            A complete, continuously updated list of articles, chapters, presentations, and
+                            working papers.
+                        </p>
+                    </div>
+                    <a href="publications.html"
+                       class="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-amber-400 px-6 py-3 text-sm font-semibold text-navy hover:bg-amber-300 transition">
+                        <span>View Publications</span>
+                        <i data-feather="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </aside>
+
+            </div>
+        </section>
+
+        <!-- ───────────────────── CTA · COLLABORATE ───────────────────── -->
+        <section id="collaborate" class="bg-burgundy text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden reveal" aria-labelledby="collab-heading">
+            <div class="absolute -right-10 -bottom-10 w-48 h-48 opacity-10 dot-pattern pointer-events-none"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
+                <div class="lg:col-span-7 space-y-4">
+                    <div class="inline-flex items-center gap-2 text-amber-300 text-xs font-bold uppercase tracking-wider">
+                        <i data-feather="git-branch" class="w-4 h-4"></i>
+                        <span>Collaboration</span>
+                    </div>
+                    <h2 id="collab-heading" class="font-serif text-3xl sm:text-4xl font-bold tracking-tight">
+                        Open to research partnerships & policy dialogue
+                    </h2>
+                    <p class="text-white/80 text-sm max-w-xl leading-relaxed">
+                        I welcome inquiries from researchers, humanitarian organisations, and policy institutions
+                        working on international humanitarian law, protection, and governance in conflict-affected regions.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-5 flex flex-col sm:flex-row lg:justify-end gap-3">
+                    <a href="contact.html"
+                       class="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-burgundy hover:bg-cream transition">
+                        <span>Get in Touch</span>
+                        <i data-feather="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <a href="mailto:gracia.lwanzo@uclouvain.be"
+                       class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/40 px-7 py-3.5 text-sm font-semibold text-white hover:bg-white/10 transition">
+                        <i data-feather="mail" class="w-4 h-4"></i>
+                        <span>Email Directly</span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-burgundy/10 py-8 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-xs text-muted space-y-4 sm:space-y-0">
+            <p>© 2026 Gracia Lwanzo Kasongo. All rights reserved.</p>
+            <nav aria-label="Footer" class="flex items-center gap-6">
+                <a href="about.html" class="hover:text-burgundy transition">About</a>
+                <a href="publications.html" class="hover:text-burgundy transition">Publications</a>
+                <a href="contact.html" class="hover:text-burgundy transition">Contact</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        // Feather icons
+        feather.replace();
+
+        // Mobile menu
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function setMenu(open) {
+            mobileMenu.classList.toggle('hidden', !open);
+            menuBtn.setAttribute('aria-expanded', String(open));
+        }
+
+        menuBtn.addEventListener('click', () => setMenu(mobileMenu.classList.contains('hidden')));
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => setMenu(false));
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                setMenu(false);
+                menuBtn.focus();
+            }
+        });
+
+        // Scroll reveal (respects reduced motion via CSS)
+        const revealEls = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window) {
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+            revealEls.forEach(el => io.observe(el));
+        } else {
+            revealEls.forEach(el => el.classList.add('active'));
+        }
+    </script>
+</body>
+</html>
